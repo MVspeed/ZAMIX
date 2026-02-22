@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZAMIX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ======================================================
+       ЦВЕТА — меняй здесь, изменится везде
+    ====================================================== */
+    :root {
+      --bg:     #F4F2ED;
+      --white:  #FAFAF7;
+      --light:  #E5E1D8;
+      --fg:     #1C1C1A;
+      --muted:  #8C8A84;
+      --accent: #3A5244;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── ШАПКА ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--bg);
+      border-bottom: 1px solid var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 8px;
+      text-decoration: none;
+      color: var(--fg);
+    }
+    .logo em { color: var(--accent); font-style: normal; }
+
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-btn {
+      background: none;
+      border: 1px solid transparent;
+      padding: 5px 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--muted);
+      border-radius: 2px;
+      transition: all .2s;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── НАВИГАЦИЯ ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--light);
+      display: flex;
+      justify-content: center;
+    }
+    .nav-item {
+      position: relative;
+      padding: 20px 44px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--muted);
+      transition: color .2s;
+      user-select: none;
+    }
+    .nav-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; right: 50%;
+      height: 2px;
+      background: var(--accent);
+      transition: left .25s, right .25s;
+    }
+    .nav-item:hover, .nav-item.active { color: var(--fg); }
+    .nav-item:hover::after, .nav-item.active::after { left: 0; right: 0; }
+
+    /* ── HERO ── */
+    #hero {
+      text-align: center;
+      padding: 90px 48px 70px;
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 7vw, 88px);
+      font-weight: 300;
+      line-height: 1.06;
+      letter-spacing: -1px;
+      margin-bottom: 22px;
+      animation: fadeUp .8s ease both;
+    }
+    .hero-sub {
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--muted);
+      animation: fadeUp .8s .15s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── КАТАЛОГ ── */
+    #catalog { padding: 64px 48px 100px; }
+
+    .cat-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .cat-heading h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 300;
+    }
+    .cat-heading span {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .category-panel { display: none; }
+    .category-panel.visible { display: block; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    /* ══════════════════════════════════════════════
+       КАРТОЧКА ТОВАРА
+       Фото сверху — название и описание снизу
+    ══════════════════════════════════════════════ */
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--light);
+      cursor: pointer;
+      overflow: hidden;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 32px rgba(28,28,26,.10);
+      transform: translateY(-3px);
+    }
+
+    /* Блок фотографии */
+    .product-img-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4; /* switched to vertical (portrait) photos */
+      overflow: hidden;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    /* Placeholder — показывается пока нет фото */
+    .img-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--muted);
+      opacity: .4;
+      width: 100%;
+      height: 100%;
+    }
+    .img-placeholder svg { width: 38px; height: 38px; }
+    .img-placeholder p {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Текстовая часть карточки */
+    .product-body {
+      padding: 18px 20px 22px;
+      border-top: 1px solid var(--light);
+    }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-weight: 400;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+    .product-short {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .product-cta {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity .2s, transform .2s;
+    }
+    .product-card:hover .product-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── МОДАЛЬНОЕ ОКНО ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28,28,26,.55);
+      backdrop-filter: blur(5px);
+      z-index: 900;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--white);
+      max-width: 580px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      animation: modalIn .3s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      overflow: hidden;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-body { padding: 30px 34px 34px; }
+
+    .modal-close {
+      position: absolute;
+      top: 12px; right: 14px;
+      background: rgba(255,255,255,.85);
+      border: none;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      font-size: 19px;
+      cursor: pointer;
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    .modal-close:hover { background: #fff; }
+
+    .modal-cat {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .modal-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .modal-desc {
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+    .modal-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--light);
+      border: 1px solid var(--light);
+    }
+    .spec-item { background: var(--white); padding: 13px 16px; }
+    .spec-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .spec-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--fg);
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--accent);
+      color: var(--white);
+      padding: 90px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .about-eyebrow {
+      font-size: 10px; letter-spacing: 5px;
+      text-transform: uppercase; opacity: .55;
+      margin-bottom: 18px;
+    }
+    .about-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3.5vw, 48px);
+      font-weight: 300; line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .about-text { font-size: 14px; line-height: 1.95; opacity: .75; }
+
+    .about-stats { display: flex; flex-direction: column; gap: 32px; }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px; font-weight: 300;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 11px; letter-spacing: 2px;
+      text-transform: uppercase; opacity: .6;
+    }
+
+    /* ── ФУТЕР ── */
+    footer {
+      background: var(--fg);
+      color: var(--white);
+      padding: 60px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .footer-brand .logo { color: var(--white); }
+    .footer-brand .logo em { color: #7BAA93; }
+    .footer-copy {
+      margin-top: 10px;
+      font-size: 11px;
+      color: rgba(255,255,255,.35);
+    }
+    .contacts-label {
+      font-size: 9px; letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 14px;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: rgba(255,255,255,.7);
+      font-size: 13px;
+      margin-bottom: 10px;
+      transition: color .2s;
+    }
+    .contact-link:hover { color: #fff; }
+    .contact-link .icon { font-size: 16px; }
+
+    /* ── АДАПТИВ ── */
+    @media (max-width: 720px) {
+      header { padding: 14px 22px; }
+      #hero  { padding: 60px 22px 48px; }
+      #catalog { padding: 40px 22px 70px; }
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 10px; }
+      #about { grid-template-columns: 1fr; padding: 60px 22px; gap: 40px; }
+      footer { padding: 40px 22px; }
+      .nav-item { padding: 18px 16px; font-size: 10px; letter-spacing: 1.5px; }
+      .modal-body { padding: 20px 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     ШАПКА
+============================================================ -->
+<header>
+  <a href="#" class="logo">ZA<em>M</em>IX</a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn"        onclick="setLang('uz')">UZ</button>
+    <button class="lang-btn"        onclick="setLang('ru')">RU</button>
+  </div>
+</header>
+
+<!-- ============================================================
+     НАВИГАЦИЯ — КАТЕГОРИИ
+============================================================ -->
+<nav>
+  <div class="nav-item active" onclick="showCategory('water', event)">
+    <span data-key="nav_water">Water</span>
+  </div>
+  <div class="nav-item" onclick="showCategory('energy', event)">
+    <span data-key="nav_energy">Energy Drinks</span>
+  </div>
+  <div class="nav-item" onclick="showCategory('protein', event)">
+    <span data-key="nav_protein">Protein</span>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="hero">
+  <p class="hero-eyebrow" data-key="hero_eyebrow">Purity in every drop</p>
+  <h1 class="hero-title"  data-key="hero_title">Nature.<br>Energy.<br>Balance.</h1>
+  <p class="hero-sub"     data-key="hero_sub">Products made for those who care about quality — nothing extra.</p>
+</section>
+
+<!-- ============================================================
+     КАТАЛОГ
+============================================================ -->
+<section id="catalog">
+
+  <div class="category-panel visible" id="panel-water">
+    <div class="cat-heading">
+      <h2 data-key="nav_water">Water</h2>
+      <span data-key="cat_count_water">3 products</span>
+    </div>
+    <div class="products-grid" id="grid-water"></div>
+  </div>
+
+  <div class="category-panel" id="panel-energy">
+    <div class="cat-heading">
+      <h2 data-key="nav_energy">Energy Drinks</h2>
+      <span data-key="cat_count_energy">3 products</span>
+    </div>
+    <div class="products-grid" id="grid-energy"></div>
+  </div>
+
+  <div class="category-panel" id="panel-protein">
+    <div class="cat-heading">
+      <h2 data-key="nav_protein">Protein</h2>
+      <span data-key="cat_count_protein">3 products</span>
+    </div>
+    <div class="products-grid" id="grid-protein"></div>
+  </div>
+
+</section>
+
+<!-- ============================================================
+     МОДАЛЬНОЕ ОКНО — описание товара
+============================================================ -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-img-wrap" id="m-img-wrap"></div>
+    <div class="modal-body">
+      <span class="modal-cat"   id="m-cat"></span>
+      <p    class="modal-name"  id="m-name"></p>
+      <p    class="modal-desc"  id="m-desc"></p>
+      <div  class="modal-specs" id="m-specs"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     ABOUT — легенда компании
+============================================================ -->
+<section id="about">
+  <div>
+    <p  class="about-eyebrow" data-key="about_eyebrow">About us</p>
+    <h2 class="about-title"   data-key="about_title">We believe in what you drink</h2>
+    <p  class="about-text"    data-key="about_text">ZAMIX is an Uzbek beverage and sports nutrition brand born from one simple idea: people deserve to know what's in their drink. We work with clean mountain sources and trusted protein suppliers so every product speaks for itself — no artificial flavours, no hidden sugar. Only what's needed.</p>
+  </div>
+  <div class="about-stats">
+    <div class="stat-item">
+      <p class="stat-number">100%</p>
+      <p class="stat-label" data-key="stat1">Natural composition</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-number">0</p>
+      <p class="stat-label" data-key="stat2">Artificial colours</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-number">&#8734;</p>
+      <p class="stat-label" data-key="stat3">Care for you</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     КОНТАКТЫ
+     Замени ссылки на реальные данные!
+============================================================ -->
+<footer>
+  <div class="footer-brand">
+    <span class="logo">ZA<em>M</em>IX</span>
+    <p class="footer-copy">© 2026 ZAMIX. All rights reserved.</p>
+  </div>  
+  <div class="footer-contacts">
+    <p class="contacts-label" data-key="contacts_label">Contacts</p>
+    <!-- Замени your_telegram на свой username -->
+    <a class="contact-link" href="https://t.me/agvuz" target="_blank">
+      <span class="icon">✈</span><span>@agvuz</span>
+    </a>
+    <!-- Замени на свой email -->
+    <a class="contact-link" href="mailto:hello@zamix.uz">
+      <span class="icon">✉</span><span>hello@zamix.uz</span>
+    </a>
+    <!-- Замени на свой номер -->
+    <a class="contact-link" href="tel:+998990008673">
+      <span class="icon">☏</span><span>+998990008673</span>
+    </a>
+  </div>
+</footer>
+
+
+<script>
+/* ==============================================================
+   ДАННЫЕ ТОВАРОВ
+   ────────────────────────────────────────────────────────────
+
+   КАК ДОБАВИТЬ ФОТО К ТОВАРУ:
+     1. Создай рядом с index.html папку, например: foto
+     2. Положи туда фото товара: foto/water1.jpg
+     3. В поле image укажи путь:   image: "foto/water1.jpg"
+     Если фото нет — оставь пустым: image: ""
+
+   КАК ДОБАВИТЬ НОВЫЙ ТОВАР:
+     Скопируй любой блок { image, name, cat, short, desc, specs }
+     и вставь его в нужный массив (water, energy или protein).
+     Не забудь запятую между блоками!
+================================================================ */
+const PRODUCTS = {
+
+  /* ─── ВОДА ─── */
+  water: [
+    {
+      image: "",          /* <-- путь к фото, например: "foto/water1.jpg" */
+      name:  { en: "Mountain Pure",      uz: "Tog' toza",       ru: "Горная чистая"         },
+      cat:   { en: "Water",              uz: "Suv",              ru: "Вода"                  },
+      short: { en: "Still, 0.5 l",       uz: "Gazsiiz, 0.5 l",  ru: "Негазированная, 0.5 л" },
+      desc:  {
+        en: "Natural spring water from the mountains of Uzbekistan. Multi-stage filtered, preserving natural minerals.",
+        uz: "O'zbekiston tog' buloqlaridan tabiiy suv. Ko'p bosqichli filtrlashdan o'tadi.",
+        ru: "Природная родниковая вода с горных источников Узбекистана. Многоступенчатая фильтрация, природный минеральный баланс."
+      },
+      specs: [
+        { label: { en: "Volume",      uz: "Hajm",       ru: "Объём"         }, value: "500 ml"   },
+        { label: { en: "Calories",    uz: "Kaloriya",   ru: "Калории"       }, value: "0 kcal"   },
+        { label: { en: "pH",          uz: "pH",          ru: "pH"            }, value: "7.2"      },
+        { label: { en: "TDS",         uz: "Minerallar", ru: "Минерализация" }, value: "210 mg/l" }
+      ]
+    },
+    {
+      image: "",
+      name:  { en: "Mint Infused",       uz: "Yalpizli",        ru: "С мятой"               },
+      cat:   { en: "Water",              uz: "Suv",              ru: "Вода"                  },
+      short: { en: "Natural mint, still",uz: "Tabiiy yalpiz",    ru: "Мята, негазированная"  },
+      desc:  {
+        en: "Light water with natural mint extract. No sugar, no artificial flavours. Refreshing and invigorating.",
+        uz: "Yalpiz ekstrakti bilan engil suv. Shakar va sun'iy ta'msiz. Yangilovchi.",
+        ru: "Лёгкая вода с натуральным экстрактом мяты. Без сахара и ароматизаторов. Освежает и тонизирует."
+      },
+      specs: [
+        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "500 ml" },
+        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "0 kcal" },
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    },
+        { label: { en: "Type",     uz: "Tur",      ru: "Тип"     }, value: "Still"  }
+      ]
+    },
+    {
+      image: "",
+      name:  { en: "Sparkling",          uz: "Gazlangan",        ru: "Газированная"          },
+      cat:   { en: "Water",              uz: "Suv",               ru: "Вода"                 },
+      short: { en: "Natural sparkling, 0.33 l", uz: "Tabiiy gazlangan, 0.33 l", ru: "Природная, с газом, 0.33 л" },
+      desc:  {
+        en: "Naturally sparkling water. Perfect with meals — refreshing without overpowering food.",
+        uz: "Engil gazlangan tabiiy suv. Ovqat ta'mini bo'g'maydi.",
+        ru: "Природная вода с лёгким газированием. Идеально к столу — освежает, не перебивая вкус."
+      },
+      specs: [
+        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "330 ml"    },
+        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "0 kcal"    },
+        { label: { en: "CO2",      uz: "CO2",       ru: "CO₂"    }, value: "Medium"    },
+        { label: { en: "Type",     uz: "Tur",      ru: "Тип"     }, value: "Sparkling" }
+      ]
+    }
+  ],
+
+  /* ─── ЭНЕРГЕТИКИ ─── */
+  energy: [
+    {
+      image: "/Users/makarvolnykh/Desktop/ZAMIX/greyMonster.jpg",
+      name:  { en: "Storm Original",     uz: "Storm Original",   ru: "Storm Original"        },
+      cat:   { en: "Energy Drink",        uz: "Energetik",        ru: "Энергетик"             },
+      short: { en: "Classic, citrus",     uz: "Klassik, sitrus",  ru: "Классический, цитрус"  },
+      desc:  {
+        en: "Classic energy drink with caffeine, taurine and B-vitamins. Energising without excess sugar. Flavour: fresh citrus.",
+        uz: "Kofein, taurin va B vitaminlari bilan klassik energetik. Ortiqcha shakarsiz. Ta'm: yangi sitrus.",
+        ru: "Классический энергетик с кофеином, таурином и витаминами B. Бодрит без лишнего сахара. Вкус: свежий цитрус."
+      },
+      specs: [
+        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml"  },
+        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "45 kcal" },
+        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "80 mg"   },
+        { label: { en: "Taurine",  uz: "Taurin",   ru: "Таурин"  }, value: "1000 mg" }
+      ]
+    },
+    {
+      image: "",
+      name:  { en: "Storm Zero",          uz: "Storm Zero",       ru: "Storm Zero"            },
+      cat:   { en: "Energy Drink",        uz: "Energetik",        ru: "Энергетик"             },
+      short: { en: "Sugar-free, mango-passion", uz: "Shakarsiz, mango-marakuya", ru: "Без сахара, манго-маракуйя" },
+      desc:  {
+        en: "Zero sugar, zero calories. All the boost, no compromises. Rich mango-passion fruit flavour.",
+        uz: "Shakar va kaloriyasiz. Barcha quvvat, murosa yo'q. Mango va marakuya ta'mi.",
+        ru: "Без сахара и калорий. Весь заряд — без компромиссов. Насыщенный вкус манго и маракуйи."
+      },
+      specs: [
+        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
+        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "0 kcal" },
+        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "80 mg"  },
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
+      ]
+    },
+    {
+      image: "",
+      name:  { en: "Storm Green",         uz: "Storm Green",      ru: "Storm Green"           },
+      cat:   { en: "Energy Drink",        uz: "Energetik",        ru: "Энергетик"             },
+      short: { en: "Green tea + guarana", uz: "Yashil choy + guarana", ru: "Зелёный чай + гуарана" },
+      desc:  {
+        en: "Smooth energy drink based on green tea and guarana. Gradual energy lift, no sudden spikes. No artificial colours.",
+        uz: "Yashil choy va guarana asosidagi yumshoq energetik. Silliq energiya. Sun'iy bo'yoqsiz.",
+        ru: "Мягкий энергетик на основе зелёного чая и гуараны. Плавный подъём энергии. Без красителей."
+      },
+      specs: [
+        { label: { en: "Volume",    uz: "Hajm",     ru: "Объём"     }, value: "330 ml"  },
+        { label: { en: "Calories",  uz: "Kaloriya", ru: "Калории"   }, value: "28 kcal" },
+        { label: { en: "Caffeine",  uz: "Kafein",   ru: "Кофеин"    }, value: "65 mg"   },
+        { label: { en: "Colouring", uz: "Bo'yoq",   ru: "Краситель" }, value: "None"    }
+      ]
+    }
+  ],
+
+  /* ─── ПРОТЕИН ─── */
+  protein: [
+    {
+      image: "",
+      name:  { en: "Whey Classic",        uz: "Whey Classic",     ru: "Whey Classic"          },
+      cat:   { en: "Protein",             uz: "Protein",           ru: "Протеин"               },
+      short: { en: "Whey, vanilla",       uz: "Zardob, vanil",     ru: "Сывороточный, ваниль"  },
+      desc:  {
+        en: "Classic whey protein with a complete amino acid profile. Fast-absorbing, ideal post-workout.",
+        uz: "To'liq aminokislota profili bilan klassik zardob proteini. Tez hazm bo'ladi.",
+        ru: "Классический сывороточный протеин с полным аминокислотным профилем. Быстро усваивается, идеален после тренировки."
+      },
+      specs: [
+        { label: { en: "Serving",  uz: "Porsiya",  ru: "Порция"  }, value: "30 g"      },
+        { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"   }, value: "24 g"      },
+        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "122 kcal"  },
+        { label: { en: "BCAA",     uz: "BCAA",      ru: "BCAA"   }, value: "5.5 g"     }
+      ]
+    },
+    {
+      image: "",
+      name:  { en: "Plant Protein",       uz: "Plant Protein",    ru: "Plant Protein"         },
+      cat:   { en: "Protein",             uz: "Protein",           ru: "Протеин"               },
+      short: { en: "Vegan, chocolate",    uz: "O'simlik, shokolad",ru: "Растительный, шоколад" },
+      desc:  {
+        en: "Protein from peas and brown rice. Suitable for vegans and lactose-intolerant individuals. Dark chocolate flavour.",
+        uz: "No'xat va jigarrang guruch proteini. Vegan va laktoza bag'rimsizligi uchun. Ta'm: qora shokolad.",
+        ru: "Протеин из гороха и коричневого риса. Для веганов и людей с непереносимостью лактозы. Тёмный шоколад."
+      },
+      specs: [
+        { label: { en: "Serving",  uz: "Porsiya",  ru: "Порция"  }, value: "32 g"     },
+        { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"   }, value: "22 g"     },
+        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "128 kcal" },
+        { label: { en: "Lactose",  uz: "Laktoza",  ru: "Лактоза" }, value: "None"     }
+      ]
+    },
+    {
+      image: "",
+      name:  { en: "Recovery Mix",        uz: "Recovery Mix",     ru: "Recovery Mix"          },
+      cat:   { en: "Protein",             uz: "Protein",           ru: "Протеин"               },
+      short: { en: "Protein + carbs, strawberry", uz: "Protein + uglevodlar, qulupnay", ru: "Протеин + углеводы, клубника" },
+      desc:  {
+        en: "Recovery formula combining fast protein with a carbohydrate complex. Ideal for endurance training.",
+        uz: "Tez proteinni uglevodlar kompleksi bilan birlashtiruvchi tiklanish formulasi.",
+        ru: "Формула восстановления: быстрый протеин + углеводный комплекс. Идеально для тренировок на выносливость."
+      },
+      specs: [
+        { label: { en: "Serving",  uz: "Porsiya",    ru: "Порция"   }, value: "60 g"     },
+        { label: { en: "Protein",  uz: "Oqsil",      ru: "Белок"    }, value: "20 g"     },
+        { label: { en: "Carbs",    uz: "Uglevodlar", ru: "Углеводы" }, value: "28 g"     },
+        { label: { en: "Calories", uz: "Kaloriya",   ru: "Калории"  }, value: "210 kcal" }
+      ]
+    }
+  ]
+
+};
+
+/* ==============================================================
+   ПЕРЕВОДЫ ИНТЕРФЕЙСА
+================================================================ */
+const TRANSLATIONS = {
+  en: {
+    hero_eyebrow:      "Purity in every drop",
+    hero_title:        "Nature.<br>Energy.<br>Balance.",
+    hero_sub:          "Products made for those who care about quality — nothing extra.",
+    nav_water:         "Water",
+    nav_energy:        "Energy Drinks",
+    nav_protein:       "Protein",
+    cat_count_water:   "3 products",
+    cat_count_energy:  "3 products",
+    cat_count_protein: "3 products",
+    about_eyebrow:     "About us",
+    about_title:       "We believe in what you drink",
+    about_text:        "ZAMIX is an Uzbek beverage and sports nutrition brand born from one simple idea: people deserve to know what's in their drink. We work with clean mountain sources and trusted protein suppliers so every product speaks for itself — no artificial flavours, no hidden sugar.",
+    stat1:             "Natural composition",
+    stat2:             "Artificial colours",
+    stat3:             "Care for you",
+    contacts_label:    "Contacts",
+    view_btn:          "View &#8594;",
+  },
+  uz: {
+    hero_eyebrow:      "Har tomchida tozalik",
+    hero_title:        "Tabiat.<br>Energiya.<br>Muvozanat.",
+    hero_sub:          "Sifat va tarkibni qadrlaydigan odamlar uchun yaratilgan mahsulotlar.",
+    nav_water:         "Suv",
+    nav_energy:        "Energetiklar",
+    nav_protein:       "Protein",
+    cat_count_water:   "3 mahsulot",
+    cat_count_energy:  "3 mahsulot",
+    cat_count_protein: "3 mahsulot",
+    about_eyebrow:     "Biz haqimizda",
+    about_title:       "Ichimlikning tarkibiga ishoning",
+    about_text:        "ZAMIX — oddiy g'oyadan tug'ilgan o'zbek brendidir. Biz toza tog' buloqlari va ishonchli protein yetkazib beruvchilar bilan ishlaymiz. Har bir mahsulot o'zi uchun gapiradi.",
+    stat1:             "Tabiiy tarkib",
+    stat2:             "Sun'iy bo'yoqlar",
+    stat3:             "Siz uchun g'amxo'rlik",
+    contacts_label:    "Aloqa",
+    view_btn:          "Ko'rish &#8594;",
+  },
+  ru: {
+    hero_eyebrow:      "Чистота в каждой капле",
+    hero_title:        "Природа.<br>Энергия.<br>Баланс.",
+    hero_sub:          "Продукты для тех, кто ценит качество и состав — без лишнего.",
+    nav_water:         "Вода",
+    nav_energy:        "Энергетики",
+    nav_protein:       "Протеин",
+    cat_count_water:   "3 продукта",
+    cat_count_energy:  "3 продукта",
+    cat_count_protein: "3 продукта",
+    about_eyebrow:     "О нас",
+    about_title:       "Мы верим в то, что пьёшь",
+    about_text:        "ZAMIX — узбекский бренд напитков и спортивного питания. Мы работаем с чистыми горными источниками и проверенными поставщиками протеина. Каждый продукт говорит сам за себя — без ароматизаторов, без скрытого сахара.",
+    stat1:             "Натуральный состав",
+    stat2:             "Искусственных красителей",
+    stat3:             "Забота о вас",
+    contacts_label:    "Контакты",
+    view_btn:          "Смотреть &#8594;",
+  }
+};
+
+/* ==============================================================
+   ЛОГИКА — не меняй
+================================================================ */
+let currentLang = 'en';
+
+/* SVG-иконка placeholder */
+function placeholderHTML() {
+  return `<div class="img-placeholder">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+         stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <circle cx="8.5" cy="8.5" r="1.5"/>
+      <polyline points="21 15 16 10 5 21"/>
+    </svg>
+    <p>add photo</p>
+  </div>`;
+}
+
+/* HTML для блока с фото */
+function imgHTML(src) {
+  if (src) {
+    return `<img src="${src}" alt=""
+      onerror="this.parentNode.innerHTML = placeholderHTML()" />`;
+  }
+  return placeholderHTML();
+}
+
+/* Отрисовка карточек */
+function renderProducts() {
+  const t = TRANSLATIONS[currentLang];
+  ['water', 'energy', 'protein'].forEach(function(cat) {
+    var grid = document.getElementById('grid-' + cat);
+    grid.innerHTML = '';
+    PRODUCTS[cat].forEach(function(p, i) {
+      var card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML =
+        '<div class="product-img-wrap">' + imgHTML(p.image) + '</div>' +
+        '<div class="product-body">' +
+          '<p class="product-name">' + p.name[currentLang] + '</p>' +
+          '<p class="product-short">' + p.short[currentLang] + '</p>' +
+          '<span class="product-cta">' + t.view_btn + '</span>' +
+        '</div>';
+      card.addEventListener('click', (function(c, idx) {
+        return function() { openModal(c, idx); };
+      })(cat, i));
+      grid.appendChild(card);
+    });
+  });
+}
+
+/* Переключение категории */
+function showCategory(cat, e) {
+  document.querySelectorAll('.category-panel').forEach(function(p) {
+    p.classList.remove('visible');
+  });
+  document.getElementById('panel-' + cat).classList.add('visible');
+  document.querySelectorAll('.nav-item').forEach(function(n) {
+    n.classList.remove('active');
+  });
+  if (e && e.currentTarget) e.currentTarget.classList.add('active');
+}
+
+/* Открытие модального окна */
+function openModal(cat, idx) {
+  var p = PRODUCTS[cat][idx];
+  var l = currentLang;
+
+  var wrap = document.getElementById('m-img-wrap');
+  wrap.innerHTML = imgHTML(p.image);
+
+  document.getElementById('m-cat').textContent  = p.cat[l];
+  document.getElementById('m-name').textContent = p.name[l];
+  document.getElementById('m-desc').textContent = p.desc[l];
+
+  document.getElementById('m-specs').innerHTML = p.specs.map(function(s) {
+    return '<div class="spec-item">' +
+      '<p class="spec-label">' + s.label[l] + '</p>' +
+      '<p class="spec-value">' + s.value + '</p>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+/* Закрытие модального окна */
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modal')) {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+/* Escape закрывает модалку */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+/* Смена языка */
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+  document.documentElement.lang = lang;
+
+  var t = TRANSLATIONS[lang];
+  document.querySelectorAll('[data-key]').forEach(function(el) {
+    var key = el.getAttribute('data-key');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  renderProducts();
+}
+
+/* Запуск */
+setLang('en');
+</script>
+</body>
+</html>
