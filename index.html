@@ -160,7 +160,7 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 16px;
     }
 
@@ -598,54 +598,122 @@ const PRODUCTS = {
   /* ─── ВОДА ─── */
   water: [
     {
-      image: "AA-Drink-Proteinwater-Grape-Gojiberry.jpg",          /* <-- путь к фото, например: "foto/water1.jpg" */
-      name:  { en: "AA Drink Protein Water Grape Gojiberry", uz: "AA Drink Protein Water Grape Gojiberry", ru: "AA Drink Protein Water Grape Gojiberry"},
-      cat:   { en: "Water",              uz: "Suv",              ru: "Протеиновая вода"},
-      short: { en: "Still, 0.5 l",       uz: "Gazsiiz, 0.5 l",  ru: "Виноград, ягоды годжи / 0.5л" },
+      image: "AA-Drink-Proteinwater-Grape-Gojiberry.jpg",
+      name:  { en: "AA Drink Protein Water Grape Gojiberry", uz: "AA Drink Protein Water Grape Gojiberry", ru: "AA Drink Protein Water Grape Gojiberry" },
+      cat:   { en: "Protein Water", uz: "Protein suv", ru: "Протеиновая вода" },
+      short: { en: "Grape & goji berry / 0.5 l", uz: "Uzum va goji / 0.5 l", ru: "Виноград и годжи / 0.5 л" },
       desc:  {
-        en: "Natural spring water from the mountains of Uzbekistan. Multi-stage filtered, preserving natural minerals.",
-        uz: "O'zbekiston tog' buloqlaridan tabiiy suv. Ko'p bosqichli filtrlashdan o'tadi.",
-        ru: "AA Drink Protein Water Grape Gojiberry — это лёгкий освежающий протеиновый напиток с ярким вкусом винограда и ягод годжи. Идеальное сочетание пользы и свежести для тех, кто ведёт активный образ жизни и хочет поддерживать форму без тяжёлых молочных коктейлей."
+        en: "A light, refreshing protein drink with a vivid grape and goji berry flavour. 20 g of collagen protein per bottle — perfect for an active lifestyle without heavy shakes.",
+        uz: "Uzum va goji rezavorining yorqin ta'mi bilan yengil protein ichimligi. Har bir shishada 20 g kollagen oqsil — og'ir kokteyllarsiz faol turmush uchun ideal.",
+        ru: "Лёгкий освежающий протеиновый напиток со вкусом винограда и ягод годжи. 20 г коллагенового протеина в каждой бутылке — идеально для активного образа жизни без тяжёлых коктейлей."
       },
       specs: [
-        { label: { en: "Volume",      uz: "Hajm",       ru: "Объём"         }, value: "500 ml"   },
-        { label: { en: "Calories",    uz: "Kaloriya",   ru: "Калории"       }, value: "14 ккал."   },
-        { label: { en: "pH",          uz: "pH",          ru: "Белок"            }, value: "4 г."      },
-        { label: { en: "TDS",         uz: "Minerallar", ru: "Углеводы" }, value: "0" }
+        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"  }, value: "500 ml"  },
+        { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"  }, value: "20 g"    },
+        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории"}, value: "14 kcal" },
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"  }, value: "0 g"     }
       ]
     },
     {
-      image: "",
-      name:  { en: "Mint Infused",       uz: "Yalpizli",        ru: "С мятой"               },
-      cat:   { en: "Water",              uz: "Suv",              ru: "Вода"                  },
-      short: { en: "Natural mint, still",uz: "Tabiiy yalpiz",    ru: "Мята, негазированная"  },
+      image: "AA-Drink-Proteinwater-Peach-Yuzu.jpg",
+      name:  { en: "AA Drink Protein Water Peach Yuzu", uz: "AA Drink Protein Water Peach Yuzu", ru: "AA Drink Protein Water Peach Yuzu" },
+      cat:   { en: "Protein Water", uz: "Protein suv", ru: "Протеиновая вода" },
+      short: { en: "Peach & yuzu / 0.5 l", uz: "Shaftoli va yuzu / 0.5 l", ru: "Персик и юдзу / 0.5 л" },
       desc:  {
-        en: "Light water with natural mint extract. No sugar, no artificial flavours. Refreshing and invigorating.",
-        uz: "Yalpiz ekstrakti bilan engil suv. Shakar va sun'iy ta'msiz. Yangilovchi.",
-        ru: "Лёгкая вода с натуральным экстрактом мяты. Без сахара и ароматизаторов. Освежает и тонизирует."
+        en: "Refreshing sports drink with 20 g of added protein and a delicate peach and yuzu flavour. Perfect thirst quencher after a workout.",
+        uz: "20 g qo'shimcha oqsilga ega yangilovchi sport ichimligi, nozik shaftoli va yuzu ta'mi bilan. Mashqdan keyin eng yaxshi chanqoq qondiruvchi.",
+        ru: "Освежающий спортивный напиток с 20 г протеина и нежным вкусом персика и юдзу. Идеально утоляет жажду после тренировки."
       },
       specs: [
-        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "500 ml" },
-        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "0 kcal" },
-        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    },
-        { label: { en: "Type",     uz: "Tur",      ru: "Тип"     }, value: "Still"  }
+        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"  }, value: "500 ml"  },
+        { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"  }, value: "20 g"    },
+        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории"}, value: "16 kcal" },
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"  }, value: "0 g"     }
       ]
     },
     {
-      image: "",
-      name:  { en: "Sparkling",          uz: "Gazlangan",        ru: "Газированная"          },
-      cat:   { en: "Water",              uz: "Suv",               ru: "Вода"                 },
-      short: { en: "Natural sparkling, 0.33 l", uz: "Tabiiy gazlangan, 0.33 l", ru: "Природная, с газом, 0.33 л" },
+      image: "AA-Drink-Sportwater-Apple-Kiwi.jpg",
+      name:  { en: "AA Drink Sportwater Apple Kiwi", uz: "AA Drink Sportwater Apple Kiwi", ru: "AA Drink Sportwater Apple Kiwi" },
+      cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
+      short: { en: "Apple & kiwi / 0.5 l", uz: "Olma va kivi / 0.5 l", ru: "Яблоко и киви / 0.5 л" },
       desc:  {
-        en: "Naturally sparkling water. Perfect with meals — refreshing without overpowering food.",
-        uz: "Engil gazlangan tabiiy suv. Ovqat ta'mini bo'g'maydi.",
-        ru: "Природная вода с лёгким газированием. Идеально к столу — освежает, не перебивая вкус."
+        en: "Sugar-free hypotonic sports drink with electrolytes and magnesium. Fresh apple and kiwi flavour — a healthy alternative to soft drinks for everyday hydration.",
+        uz: "Elektrolit va magniy qo'shilgan, shakarsiz gipotonk sport ichimligi. Yangi olma va kivi ta'mi — kundalik suv ichish uchun gazli ichimliklarning sog'lom muqobili.",
+        ru: "Безсахарный гипотонический спортивный напиток с электролитами и магнием. Свежий вкус яблока и киви — здоровая альтернатива газировке для ежедневного увлажнения."
       },
       specs: [
-        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "330 ml"    },
-        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "0 kcal"    },
-        { label: { en: "CO2",      uz: "CO2",       ru: "CO₂"    }, value: "Medium"    },
-        { label: { en: "Type",     uz: "Tur",      ru: "Тип"     }, value: "Sparkling" }
+        { label: { en: "Volume",       uz: "Hajm",          ru: "Объём"       }, value: "500 ml"   },
+        { label: { en: "Electrolytes", uz: "Elektrolitlar", ru: "Электролиты" }, value: "Na, K, Ca, Mg" },
+        { label: { en: "Magnesium",    uz: "Magniy",        ru: "Магний"      }, value: "+"        },
+        { label: { en: "Calories",     uz: "Kaloriya",      ru: "Калории"     }, value: "0 kcal"   }
+      ]
+    },
+    {
+      image: "AA-Drink-Sportwater-Berries.jpg",
+      name:  { en: "AA Drink Sportwater Berries", uz: "AA Drink Sportwater Berries", ru: "AA Drink Sportwater Berries" },
+      cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
+      short: { en: "Mixed berries / 0.5 l", uz: "Aralash rezavorlar / 0.5 l", ru: "Лесные ягоды / 0.5 л" },
+      desc:  {
+        en: "Sugar-free hypotonic sports drink with electrolytes and magnesium. Rich berry flavour makes it an ideal choice for those who find plain water too boring.",
+        uz: "Elektrolit va magniy qo'shilgan, shakarsiz gipotonk sport ichimligi. Boy rezavor ta'mi uni oddiy suvdan qiziqarli muqobilga aylantiradi.",
+        ru: "Безсахарный гипотонический спортивный напиток с электролитами и магнием. Насыщенный ягодный вкус — идеальный выбор для тех, кому обычная вода кажется скучной."
+      },
+      specs: [
+        { label: { en: "Volume",       uz: "Hajm",          ru: "Объём"       }, value: "500 ml"        },
+        { label: { en: "Electrolytes", uz: "Elektrolitlar", ru: "Электролиты" }, value: "Na, K, Ca, Mg" },
+        { label: { en: "Magnesium",    uz: "Magniy",        ru: "Магний"      }, value: "+"             },
+        { label: { en: "Calories",     uz: "Kaloriya",      ru: "Калории"     }, value: "0 kcal"        }
+      ]
+    },
+    {
+      image: "AA-Drink-Sportwater-Lemon.jpg",
+      name:  { en: "AA Drink Sportwater Lemon", uz: "AA Drink Sportwater Lemon", ru: "AA Drink Sportwater Lemon" },
+      cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
+      short: { en: "Lemon / 0.5 l", uz: "Limon / 0.5 l", ru: "Лимон / 0.5 л" },
+      desc:  {
+        en: "Sugar-free hypotonic sports drink with electrolytes and magnesium. A clean natural lemon flavour — refreshing and healthy for active people.",
+        uz: "Elektrolit va magniy qo'shilgan, shakarsiz gipotonk sport ichimligi. Toza tabiiy limon ta'mi — faol odamlar uchun yangilovchi va sog'lom.",
+        ru: "Безсахарный гипотонический спортивный напиток с электролитами и магнием. Чистый натуральный вкус лимона — освежающий и здоровый выбор для активных людей."
+      },
+      specs: [
+        { label: { en: "Volume",       uz: "Hajm",          ru: "Объём"       }, value: "500 ml"        },
+        { label: { en: "Electrolytes", uz: "Elektrolitlar", ru: "Электролиты" }, value: "Na, K, Ca, Mg" },
+        { label: { en: "Magnesium",    uz: "Magniy",        ru: "Магний"      }, value: "+"             },
+        { label: { en: "Calories",     uz: "Kaloriya",      ru: "Калории"     }, value: "0 kcal"        }
+      ]
+    },
+    {
+      image: "AA-Drink-Vitwater-Lemon-Lime.jpg",
+      name:  { en: "AA Drink Vitwater Lemon Lime", uz: "AA Drink Vitwater Lemon Lime", ru: "AA Drink Vitwater Lemon Lime" },
+      cat:   { en: "Vitamin Water", uz: "Vitamin suvi", ru: "Витаминная вода" },
+      short: { en: "Lemon & lime / 0.5 l", uz: "Limon va laym / 0.5 l", ru: "Лимон и лайм / 0.5 л" },
+      desc:  {
+        en: "Refreshing sports water enriched with vitamins B12, D, E, niacin, biotin and minerals magnesium and zinc. Supports performance and recovery during and after intensive training.",
+        uz: "B12, D, E vitaminlari, niatsin, biotin va magniy, rux minerallari bilan boyitilgan yangilovchi sport suvi. Intensiv mashqlar davomida va keyin ishlash va tiklanishni qo'llab-quvvatlaydi.",
+        ru: "Освежающая спортивная вода, обогащённая витаминами B12, D, E, ниацином, биотином, а также магнием и цинком. Поддерживает работоспособность и восстановление во время и после тренировок."
+      },
+      specs: [
+        { label: { en: "Volume",    uz: "Hajm",       ru: "Объём"    }, value: "500 ml"       },
+        { label: { en: "Vitamins",  uz: "Vitaminlar", ru: "Витамины" }, value: "B12, D, E, B7"},
+        { label: { en: "Minerals",  uz: "Minerallar", ru: "Минералы" }, value: "Mg, Zn"       },
+        { label: { en: "Calories",  uz: "Kaloriya",   ru: "Калории"  }, value: "0 kcal"       }
+      ]
+    },
+    {
+      image: "AA-Drink-Vitwater-Rhubarb-Strawberry.jpg",
+      name:  { en: "AA Drink Vitwater Rhubarb Strawberry", uz: "AA Drink Vitwater Rhubarb Strawberry", ru: "AA Drink Vitwater Rhubarb Strawberry" },
+      cat:   { en: "Vitamin Water", uz: "Vitamin suvi", ru: "Витаминная вода" },
+      short: { en: "Rhubarb & strawberry / 0.5 l", uz: "Ravent va qulupnay / 0.5 l", ru: "Ревень и клубника / 0.5 л" },
+      desc:  {
+        en: "Refreshing sports water with vitamins C, E, D, B12, niacin, folic acid, biotin and zinc. Vivid rhubarb and strawberry flavour — the perfect drink before or after sport.",
+        uz: "C, E, D, B12 vitaminlari, niatsin, folat kislota, biotin va rux bilan boyitilgan yangilovchi sport suvi. Ravent va qulupnayning yorqin ta'mi — sport oldidan yoki keyin ideal ichimlik.",
+        ru: "Освежающая спортивная вода с витаминами C, E, D, B12, ниацином, фолиевой кислотой, биотином и цинком. Яркий вкус ревеня и клубники — идеальный напиток до или после тренировки."
+      },
+      specs: [
+        { label: { en: "Volume",   uz: "Hajm",       ru: "Объём"    }, value: "500 ml"              },
+        { label: { en: "Vitamins", uz: "Vitaminlar", ru: "Витамины" }, value: "C, E, D, B12, B9, B7"},
+        { label: { en: "Minerals", uz: "Minerallar", ru: "Минералы" }, value: "Zn"                  },
+        { label: { en: "Calories", uz: "Kaloriya",   ru: "Калории"  }, value: "0 kcal"              }
       ]
     }
   ],
