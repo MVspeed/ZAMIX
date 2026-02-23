@@ -477,55 +477,152 @@ const PRODUCTS = {
      ПРОТЕИН
   ──────────────────────────────────────── */
   protein: [
+
+    /* ── КОНЦЕНТРАТ МОЛОЧНОГО БЕЛКА (MPC) ── */
     {
-      image: "",
-      name:  { en: "Whey Classic",  uz: "Whey Classic",    ru: "Whey Classic"        },
-      cat:   { en: "Protein",       uz: "Protein",         ru: "Протеин"             },
-      short: { en: "Whey, vanilla", uz: "Zardob, vanil",   ru: "Сывороточный, ваниль" },
+      image: "MPC40.jpg",
+      name:  { en: "Milk Protein Concentrate MPC-40", uz: "Sut oqsili kontsentrati MPC-40", ru: "Концентрат молочного белка MPC-40" },
+      cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
+      short: { en: "25 kg / 40% protein", uz: "25 kg / 40% oqsil", ru: "25 кг / 40% белка" },
       desc:  {
-        en: "Classic whey protein with a complete amino acid profile. Fast-absorbing, ideal post-workout.",
-        uz: "To'liq aminokislota profili bilan klassik zardob proteini. Tez hazm bo'ladi.",
-        ru: "Классический сывороточный протеин с полным аминокислотным профилем. Быстро усваивается, идеален после тренировки."
+        en: "MPC-40 is an entry-level milk protein concentrate with a balanced ratio of protein and lactose. Ideal for cheese production, fermented dairy products and food applications where both protein and carbohydrate content matter. Sourced from Poland, certified BRC, IFS, Halal and Kosher.",
+        uz: "MPC-40 — oqsil va laktoza muvozanatli nisbati bilan boshlang'ich darajadagi sut oqsili kontsentrati. Pishloq ishlab chiqarish, achitilgan sut mahsulotlari va oqsil hamda uglevodlar tarkibi muhim bo'lgan oziq-ovqat mahsulotlari uchun ideal. Polshadan yetkaziladi, BRC, IFS, Halal va Kosher sertifikatlangan.",
+        ru: "MPC-40 — концентрат молочного белка начального уровня со сбалансированным соотношением белка и лактозы. Идеален для производства сыров, кисломолочных продуктов и пищевых применений, где важно содержание как белка, так и углеводов. Производство Польша, сертификаты BRC, IFS, Халяль, Кошер."
       },
       specs: [
-        { label: { en: "Serving",  uz: "Porsiya",  ru: "Порция"  }, value: "30 g"     },
-        { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"   }, value: "24 g"     },
-        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "122 kcal" },
-        { label: { en: "BCAA",     uz: "BCAA",     ru: "BCAA"    }, value: "5.5 g"    }
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~40%"   },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
       ]
     },
     {
-      image: "",
-      name:  { en: "Plant Protein",      uz: "Plant Protein",      ru: "Plant Protein"         },
-      cat:   { en: "Protein",            uz: "Protein",            ru: "Протеин"               },
-      short: { en: "Vegan, chocolate",   uz: "O'simlik, shokolad", ru: "Растительный, шоколад" },
+      image: "MPC70.jpg",
+      name:  { en: "Milk Protein Concentrate MPC-70", uz: "Sut oqsili kontsentrati MPC-70", ru: "Концентрат молочного белка MPC-70" },
+      cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
+      short: { en: "25 kg / 70% protein", uz: "25 kg / 70% oqsil", ru: "25 кг / 70% белка" },
       desc:  {
-        en: "Protein from peas and brown rice. Suitable for vegans and lactose-intolerant individuals. Dark chocolate flavour.",
-        uz: "No'xat va jigarrang guruch proteini. Vegan va laktoza bag'rimsizligi uchun. Qora shokolad ta'mi.",
-        ru: "Протеин из гороха и коричневого риса. Для веганов и людей с непереносимостью лактозы. Тёмный шоколад."
+        en: "MPC-70 is a versatile functional protein used in yoghurts, beverages and dry mixes. Its high solubility and clean dairy flavour make it a reliable ingredient for manufacturers who need consistent performance across multiple product formats.",
+        uz: "MPC-70 — yogurt, ichimliklar va quruq aralashmalar uchun ishlatiluvchi ko'p qirrali funksional oqsil. Yuqori eruvchanlik va toza sut ta'mi uni bir nechta mahsulot formatlarida doimiy ishlashni talab qiladigan ishlab chiqaruvchilar uchun ishonchli ingredientga aylantiradi.",
+        ru: "MPC-70 — универсальный функциональный белок для йогуртов, напитков и сухих смесей. Высокая растворимость и чистый молочный вкус делают его надёжным ингредиентом для производителей, которым нужна стабильная работа в различных форматах продуктов."
       },
       specs: [
-        { label: { en: "Serving",  uz: "Porsiya",  ru: "Порция"  }, value: "32 g"     },
-        { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"   }, value: "22 g"     },
-        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "128 kcal" },
-        { label: { en: "Lactose",  uz: "Laktoza",  ru: "Лактоза" }, value: "None"     }
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~70%"   },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
       ]
     },
     {
-      image: "",
-      name:  { en: "Recovery Mix",  uz: "Recovery Mix",   ru: "Recovery Mix"              },
-      cat:   { en: "Protein",       uz: "Protein",        ru: "Протеин"                   },
-      short: { en: "Protein + carbs, strawberry", uz: "Protein + uglevodlar, qulupnay", ru: "Протеин + углеводы, клубника" },
+      image: "MPC80.jpg",
+      name:  { en: "Milk Protein Concentrate MPC-80", uz: "Sut oqsili kontsentrati MPC-80", ru: "Концентрат молочного белка MPC-80" },
+      cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
+      short: { en: "25 kg / 80% protein", uz: "25 kg / 80% oqsil", ru: "25 кг / 80% белка" },
       desc:  {
-        en: "Recovery formula combining fast protein with a carbohydrate complex. Ideal for endurance training.",
-        uz: "Tez proteinni uglevodlar kompleksi bilan birlashtiruvchi tiklanish formulasi.",
-        ru: "Формула восстановления: быстрый протеин + углеводный комплекс. Идеально для тренировок на выносливость."
+        en: "MPC-80 is a high-protein dairy ingredient widely used in sports nutrition, dietary products and protein shakes. With ~80% protein content and low lactose, it delivers clean, complete milk protein — both casein and whey — in a single ingredient.",
+        uz: "MPC-80 — sport ovqatlanishi, dietik mahsulotlar va protein kokteylarida keng qo'llaniladigan yuqori oqsillli sut ingredienti. ~80% oqsil tarkibi va past laktoza bilan u bitta ingredientda — kazein ham, zardob ham — toza, to'liq sut oqsilini ta'minlaydi.",
+        ru: "MPC-80 — высокобелковый молочный ингредиент для спортивного питания, диетических продуктов и протеиновых коктейлей. При ~80% белка и низком содержании лактозы обеспечивает чистый, полный молочный белок — казеин и сыворотку — в одном компоненте."
       },
       specs: [
-        { label: { en: "Serving",  uz: "Porsiya",    ru: "Порция"   }, value: "60 g"     },
-        { label: { en: "Protein",  uz: "Oqsil",      ru: "Белок"    }, value: "20 g"     },
-        { label: { en: "Carbs",    uz: "Uglevodlar", ru: "Углеводы" }, value: "28 g"     },
-        { label: { en: "Calories", uz: "Kaloriya",   ru: "Калории"  }, value: "210 kcal" }
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~80%"   },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+      ]
+    },
+    {
+      image: "MPC85.jpg",
+      name:  { en: "Milk Protein Concentrate MPC-85", uz: "Sut oqsili kontsentrati MPC-85", ru: "Концентрат молочного белка MPC-85" },
+      cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
+      short: { en: "25 kg / 85% protein", uz: "25 kg / 85% oqsil", ru: "25 кг / 85% белка" },
+      desc:  {
+        en: "MPC-85 is a premium-grade concentrate used in specialised and medical nutrition where maximum protein density is critical. The highest MPC grade in our range — minimal lactose, maximum protein purity. Suitable for clinical nutrition, high-protein supplements and premium sports formulas.",
+        uz: "MPC-85 — maksimal oqsil zichligi muhim bo'lgan ixtisoslashtirilgan va tibbiy ovqatlanishda qo'llaniladigan premium darajali kontsentrat. Bizning assortimentimizdagi eng yuqori MPC darajasi — minimal laktoza, maksimal oqsil tozaligi. Klinik ovqatlanish, yuqori oqsillli qo'shimchalar va premium sport formulalari uchun mos.",
+        ru: "MPC-85 — концентрат премиум-класса для специализированного и медицинского питания, где критична максимальная плотность белка. Высшая марка MPC в нашем ассортименте — минимальная лактоза, максимальная чистота белка. Для клинического питания, высокобелковых добавок и премиальных спортивных формул."
+      },
+      specs: [
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~85%"   },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
+        { label: { en: "Grade",     uz: "Daraja",     ru: "Класс"    }, value: "Premium" }
+      ]
+    },
+
+    /* ── КОНЦЕНТРАТ СЫВОРОТОЧНОГО БЕЛКА (WPC) ── */
+    {
+      image: "WPC35.jpg",
+      name:  { en: "Whey Protein Concentrate WPC-35", uz: "Zardob oqsili kontsentrati WPC-35", ru: "Концентрат сывороточного белка WPC-35" },
+      cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
+      short: { en: "25 kg / 35% protein", uz: "25 kg / 35% oqsil", ru: "25 кг / 35% белка" },
+      desc:  {
+        en: "WPC-35 is a low-protein whey concentrate used primarily in baked goods, animal feed and industrial food applications. Its higher fat and lactose content contribute flavour and texture, making it a cost-effective ingredient for large-scale production.",
+        uz: "WPC-35 — asosan pishirilgan mahsulotlar, hayvon ozuqasi va sanoat oziq-ovqat ilovalarida qo'llaniladigan past oqsillli zardob kontsentrati. Yuqori yog' va laktoza tarkibi ta'm va teksturaga hissa qo'shadi, bu esa uni katta miqyosli ishlab chiqarish uchun tejamkor ingredientga aylantiradi.",
+        ru: "WPC-35 — низкобелковый концентрат сыворотки, применяемый в выпечке, кормах и промышленном производстве продуктов питания. Более высокое содержание жира и лактозы улучшает вкус и текстуру, делая его экономичным ингредиентом для крупнотоннажного производства."
+      },
+      specs: [
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~35%"   },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+      ]
+    },
+    {
+      image: "WPC50.jpg",
+      name:  { en: "Whey Protein Concentrate WPC-50", uz: "Zardob oqsili kontsentrati WPC-50", ru: "Концентрат сывороточного белка WPC-50" },
+      cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
+      short: { en: "25 kg / 50% protein", uz: "25 kg / 50% oqsil", ru: "25 кг / 50% белка" },
+      desc:  {
+        en: "WPC-50 sits at the mid-range of whey concentrates — suitable for desserts, beverages and dairy-based drinks where a moderate protein boost is needed without a heavy whey character. A practical and affordable option for a wide range of food manufacturers.",
+        uz: "WPC-50 zardob kontsentratlarining o'rta qatorida joylashgan — og'ir zardob xususiyatisiz mo'tadil oqsil ko'tarilishi kerak bo'lgan desert, ichimlik va sut asosidagi ichimliklar uchun mos. Keng doiradagi oziq-ovqat ishlab chiqaruvchilari uchun amaliy va hamyonbop variant.",
+        ru: "WPC-50 занимает средний диапазон сывороточных концентратов — подходит для десертов, напитков и молочных продуктов, где нужно умеренное обогащение белком без выраженного вкуса сыворотки. Практичный и доступный вариант для широкого круга производителей."
+      },
+      specs: [
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~50%"   },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+      ]
+    },
+    {
+      image: "WPC60.jpg",
+      name:  { en: "Whey Protein Concentrate WPC-60", uz: "Zardob oqsili kontsentrati WPC-60", ru: "Концентрат сывороточного белка WPC-60" },
+      cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
+      short: { en: "25 kg / 60% protein", uz: "25 kg / 60% oqsil", ru: "25 кг / 60% белка" },
+      desc:  {
+        en: "WPC-60 is a functional whey concentrate widely used in yoghurts, processed cheese and milk substitutes. Good emulsification and water-binding properties make it an effective texturiser and protein booster in one, valued by manufacturers of dairy-based and dairy-alternative products alike.",
+        uz: "WPC-60 — yogurt, qayta ishlangan pishloq va sut o'rinbosarlarida keng qo'llaniladigan funksional zardob kontsentrati. Yaxshi emulsifikatsiya va suv bog'lash xususiyatlari uni bir vaqtning o'zida samarali teksturizator va oqsil kuchaytiruvchiga aylantiradi.",
+        ru: "WPC-60 — функциональный сывороточный концентрат для йогуртов, плавленых сыров и заменителей молока. Хорошие эмульгирующие и водоудерживающие свойства делают его одновременно эффективным текстуризатором и белковым обогатителем."
+      },
+      specs: [
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~60%"   },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+      ]
+    },
+    {
+      image: "WPC70.jpg",
+      name:  { en: "Whey Protein Concentrate WPC-70", uz: "Zardob oqsili kontsentrati WPC-70", ru: "Концентрат сывороточного белка WPC-70" },
+      cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
+      short: { en: "25 kg / 70% protein", uz: "25 kg / 70% oqsil", ru: "25 кг / 70% белка" },
+      desc:  {
+        en: "WPC-70 offers high solubility and a clean taste profile, making it a preferred ingredient for dietary supplements, protein-enriched beverages and meal replacement products. The balance between protein content and affordability puts it at the sweet spot for many B2B buyers.",
+        uz: "WPC-70 yuqori eruvchanlik va toza ta'm profilini taklif etadi, bu esa uni dietik qo'shimchalar, oqsilga boy ichimliklar va ovqat almashtiruvchi mahsulotlar uchun afzal ingredient qiladi. Oqsil tarkibi va arzonlik o'rtasidagi muvozanat uni ko'p B2B xaridorlar uchun eng yaxshi tanlovga aylantiradi.",
+        ru: "WPC-70 обеспечивает высокую растворимость и чистый вкусовой профиль — предпочтительный ингредиент для БАД, обогащённых белком напитков и продуктов для замены питания. Баланс между содержанием белка и ценой делает его оптимальным выбором для многих B2B-покупателей."
+      },
+      specs: [
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~70%"   },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+      ]
+    },
+    {
+      image: "WPC80.jpg",
+      name:  { en: "Whey Protein Concentrate WPC-80", uz: "Zardob oqsili kontsentrati WPC-80", ru: "Концентрат сывороточного белка WPC-80" },
+      cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
+      short: { en: "25 kg / 80% protein", uz: "25 kg / 80% oqsil", ru: "25 кг / 80% белка" },
+      desc:  {
+        en: "WPC-80 is the industry benchmark for sports and therapeutic nutrition. Fast-absorbing, rich in essential amino acids and BCAAs — it is the go-to choice for protein shakes, sports bars and recovery products. Certified BRC, IFS, Halal and Kosher. Produced in Poland.",
+        uz: "WPC-80 — sport va terapevtik ovqatlanish uchun sanoat standarti. Tez so'riluvchi, muhim aminokislotlar va BCAA bilan boy — u protein kokteyllari, sport batonlari va tiklanish mahsulotlari uchun asosiy tanlov. BRC, IFS, Halal va Kosher sertifikatlangan. Polshada ishlab chiqarilgan.",
+        ru: "WPC-80 — отраслевой стандарт для спортивного и лечебного питания. Быстро усваивается, богат незаменимыми аминокислотами и BCAA — основной выбор для протеиновых коктейлей, спортивных батончиков и продуктов восстановления. Сертификаты BRC, IFS, Халяль, Кошер. Производство Польша."
+      },
+      specs: [
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~80%"    },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"   },
+        { label: { en: "Grade",     uz: "Daraja",     ru: "Класс"    }, value: "Sport / Medical" }
       ]
     }
   ]
