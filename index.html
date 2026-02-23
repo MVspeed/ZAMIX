@@ -167,10 +167,7 @@
       margin: 0 auto;
     }
 
-    /* ══════════════════════════════════════════════
-       КАРТОЧКА ТОВАРА
-       Фото сверху — название и описание снизу
-    ══════════════════════════════════════════════ */
+    /* ── КАРТОЧКА ТОВАРА ── */
     .product-card {
       background: var(--white);
       border: 1px solid var(--light);
@@ -183,7 +180,6 @@
       transform: translateY(-3px);
     }
 
-    /* Блок фотографии */
     .product-img-wrap {
       width: 100%;
       aspect-ratio: 3 / 4;
@@ -204,7 +200,6 @@
       transform: scale(1.04);
     }
 
-    /* Placeholder — показывается пока нет фото */
     .img-placeholder {
       display: flex;
       flex-direction: column;
@@ -223,7 +218,6 @@
       text-transform: uppercase;
     }
 
-    /* Текстовая часть карточки */
     .product-body {
       padding: 18px 20px 22px;
       border-top: 1px solid var(--light);
@@ -366,18 +360,7 @@
       padding: 90px clamp(24px, 5vw, 120px);
     }
 
-    .about-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .about-eyebrow {
-      font-size: 10px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 18px;
-    }
+    .about-container { max-width: 900px; margin: 0 auto; }
 
     .about-title {
       font-family: 'Cormorant Garamond', serif;
@@ -411,10 +394,7 @@
       margin-bottom: 14px;
     }
 
-    .about-list {
-      list-style: none;
-      margin: 16px 0 0 0;
-    }
+    .about-list { list-style: none; margin: 16px 0 0 0; }
 
     .about-list li {
       font-size: 16px;
@@ -429,10 +409,8 @@
     .about-list li::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 8px;
-      width: 4px;
-      height: 4px;
+      left: 0; top: 8px;
+      width: 4px; height: 4px;
       background: var(--accent);
       border-radius: 50%;
     }
@@ -490,9 +468,7 @@
 </head>
 <body>
 
-<!-- ============================================================
-     ШАПКА
-============================================================ -->
+<!-- ШАПКА -->
 <header>
   <a href="#" class="logo">ZA<em>M</em>IX</a>
   <div class="lang-switcher">
@@ -502,9 +478,7 @@
   </div>
 </header>
 
-<!-- ============================================================
-     НАВИГАЦИЯ — КАТЕГОРИИ
-============================================================ -->
+<!-- НАВИГАЦИЯ -->
 <nav>
   <div class="nav-item active" onclick="showCategory('water', event)">
     <span data-key="nav_water">Water</span>
@@ -517,119 +491,107 @@
   </div>
 </nav>
 
-<!-- ============================================================
-     HERO
-============================================================ -->
+<!-- HERO -->
 <section id="hero">
-  <p class="hero-eyebrow" data-key="hero_eyebrow">Purity in every drop</p>
-  <h1 class="hero-title"  data-key="hero_title">Nature.<br>Energy.<br>Balance.</h1>
-  <p class="hero-sub"     data-key="hero_sub">Products made for those who care about quality — nothing extra.</p>
+  <p class="hero-eyebrow" data-key="hero_eyebrow"></p>
+  <h1 class="hero-title"  data-key="hero_title"></h1>
+  <p class="hero-sub"     data-key="hero_sub"></p>
 </section>
 
-<!-- ============================================================
-     КАТАЛОГ
-============================================================ -->
+<!-- КАТАЛОГ -->
 <section id="catalog">
 
   <div class="category-panel visible" id="panel-water">
     <div class="cat-heading">
-      <h2 data-key="nav_water">Water</h2>
-      <span data-key="cat_count_water">3 products</span>
+      <h2 data-key="nav_water"></h2>
+      <span data-key="cat_count_water"></span>
     </div>
     <div class="products-grid" id="grid-water"></div>
   </div>
 
   <div class="category-panel" id="panel-energy">
     <div class="cat-heading">
-      <h2 data-key="nav_energy">Energy Drinks</h2>
-      <span data-key="cat_count_energy">3 products</span>
+      <h2 data-key="nav_energy"></h2>
+      <span data-key="cat_count_energy"></span>
     </div>
     <div class="products-grid" id="grid-energy"></div>
   </div>
 
   <div class="category-panel" id="panel-protein">
     <div class="cat-heading">
-      <h2 data-key="nav_protein">Protein</h2>
-      <span data-key="cat_count_protein">3 products</span>
+      <h2 data-key="nav_protein"></h2>
+      <span data-key="cat_count_protein"></span>
     </div>
     <div class="products-grid" id="grid-protein"></div>
   </div>
 
 </section>
 
-<!-- ============================================================
-     МОДАЛЬНОЕ ОКНО — описание товара
-============================================================ -->
+<!-- МОДАЛКА -->
 <div class="modal-overlay" id="modal" onclick="closeModal(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
     <div class="modal-img-wrap" id="m-img-wrap"></div>
     <div class="modal-body">
-      <span class="modal-cat"   id="m-cat"></span>
-      <p    class="modal-name"  id="m-name"></p>
-      <p    class="modal-desc"  id="m-desc"></p>
+      <span class="modal-cat"  id="m-cat"></span>
+      <p    class="modal-name" id="m-name"></p>
+      <p    class="modal-desc" id="m-desc"></p>
       <div  class="modal-specs" id="m-specs"></div>
     </div>
   </div>
 </div>
 
-<!-- ============================================================
-     ABOUT — информация о компании
-============================================================ -->
+<!-- ABOUT -->
 <section id="about">
   <div class="about-container">
-    <h2 class="about-title" data-key="about_title">О нас</h2>
+    <h2 class="about-title" data-key="about_title"></h2>
 
     <div class="about-section">
-      <p class="about-text" data-key="about_intro">Мы - торговая компания, специализирующаяся на поставках современных функциональных напитков и высококачественных белковых ингредиентов.</p>
-      
-      <p class="about-text" data-key="about_mission">Наша миссия - помогать людям поддерживать активный ритм жизни, эффективно восстанавливаться и достигать своих спортивных целей с помощью продуктов, в которых мы уверены.</p>
+      <p class="about-text" data-key="about_intro"></p>
+      <p class="about-text" data-key="about_mission"></p>
     </div>
 
     <div class="about-section">
-      <h3 data-key="about_what_title">Чем мы занимаемся</h3>
-      <p class="about-text" data-key="about_what">Мы поставляем широкий ассортимент спортивного и функционального питания, в том числе:</p>
+      <h3 data-key="about_what_title"></h3>
+      <p class="about-text" data-key="about_what"></p>
       <ul class="about-list">
-        <li data-key="about_item1">энергетические напитки Celsius</li>
-        <li data-key="about_item2">протеиновую воду</li>
-        <li data-key="about_item3">спортивную воду</li>
-        <li data-key="about_item4">концентраты молочного и сывороточного белка</li>
+        <li data-key="about_item1"></li>
+        <li data-key="about_item2"></li>
+        <li data-key="about_item3"></li>
+        <li data-key="about_item4"></li>
       </ul>
     </div>
 
     <div class="about-section">
-      <h3 data-key="about_approach_title">Наш подход</h3>
-      <p class="about-text" data-key="about_approach">Мы выбираем производителей, которые соответствуют высоким стандартам качества и безопасности. Каждый продукт проходит тщательную проверку - от состава до вкуса и удобства использования.</p>
+      <h3 data-key="about_approach_title"></h3>
+      <p class="about-text" data-key="about_approach"></p>
     </div>
 
     <div class="about-section">
-      <h3 data-key="about_why_title">Почему выбирают нас</h3>
+      <h3 data-key="about_why_title"></h3>
       <ul class="about-list">
-        <li data-key="about_why1"><strong>Надежность поставок</strong> - стабильная логистика и точность сроков</li>
-        <li data-key="about_why2"><strong>Качество продукции</strong> - мы работаем только с проверенными брендами и сертифицированными ингредиентами</li>
-        <li data-key="about_why3"><strong>Гибкость</strong> - предлагаем решения как для спортивных магазинов, так и для производственных компаний или фитнес-индустрии</li>
-        <li data-key="about_why4"><strong>Партнерский сервис</strong> - открытость, прозрачность и индивидуальный подход к каждому клиенту</li>
+        <li data-key="about_why1"></li>
+        <li data-key="about_why2"></li>
+        <li data-key="about_why3"></li>
+        <li data-key="about_why4"></li>
       </ul>
     </div>
 
     <div class="about-section">
-      <h3 data-key="about_goal_title">Наша цель</h3>
-      <p class="about-text" data-key="about_goal">Создавать экосистему продуктов, которые помогают людям быть энергичнее, сильнее и здоровее ежедневно.</p>
+      <h3 data-key="about_goal_title"></h3>
+      <p class="about-text" data-key="about_goal"></p>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     КОНТАКТЫ
-     Замени ссылки на реальные данные!
-============================================================ -->
+<!-- ФУТЕР -->
 <footer>
   <div class="footer-brand">
     <span class="logo">ZA<em>M</em>IX</span>
     <p class="footer-copy">© 2026 ZAMIX. All rights reserved.</p>
-  </div>  
+  </div>
   <div class="footer-contacts">
-    <p class="contacts-label" data-key="contacts_label">Contacts</p>
+    <p class="contacts-label" data-key="contacts_label"></p>
     <a class="contact-link" href="https://t.me/agvuz" target="_blank">
       <span class="icon">📲</span><span>Telegram</span>
     </a>
@@ -645,339 +607,13 @@
   </div>
 </footer>
 
+<!-- ============================================================
+     ДАННЫЕ — в отдельном файле translations.js
+     Все тексты и товары редактируй там!
+============================================================ -->
+<script src="translations.js"></script>
 
 <script>
-const PRODUCTS = {
-  water: [
-  {
-    image: "AA-Drink-Proteinwater-Grape-Gojiberry.jpg",
-    name:  { en: "AA Drink Protein Water Grape Gojiberry", uz: "AA Drink Protein Water Grape Gojiberry", ru: "AA Drink Protein Water Grape Gojiberry" },
-    cat:   { en: "Protein Water", uz: "Protein suv", ru: "Протеиновая вода" },
-    short: { en: "Grape & goji berry / 0.5 l", uz: "Uzum va goji / 0.5 l", ru: "Виноград и годжи / 0.5 л" },
-    desc:  {
-      en: "A refreshing and healthy protein drink, packed with the powerful combination of grape and goji berries. Perfect for those seeking a clean, light drink to complement their active lifestyle.",
-      uz: "Yengil va sog'lom protein ichimligi, uzum va goji rezavorlari kuchli kombinatsiyasi bilan boyitilgan. Faol turmush tarzini qo'llab-quvvatlash uchun toza va yengil ichimlik.",
-      ru: "Освежающий и полезный протеиновый напиток, насыщенный мощной комбинацией винограда и ягод годжи. Идеально подходит для тех, кто ищет легкий и чистый напиток для активного образа жизни."
-    },
-    specs: [
-      { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"  }, value: "500 ml"  },
-      { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"  }, value: "20 g"    },
-      { label: { en: "Calories", uz: "Kaloriya", ru: "Калории"}, value: "14 kcal" },
-      { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"  }, value: "0 g"     }
-    ]
-  },
-  {
-    image: "AA-Drink-Proteinwater-Peach-Yuzu.jpg",
-    name:  { en: "AA Drink Protein Water Peach Yuzu", uz: "AA Drink Protein Water Peach Yuzu", ru: "AA Drink Protein Water Peach Yuzu" },
-    cat:   { en: "Protein Water", uz: "Protein suv", ru: "Протеиновая вода" },
-    short: { en: "Peach & yuzu / 0.5 l", uz: "Shaftoli va yuzu / 0.5 l", ru: "Персик и юдзу / 0.5 л" },
-    desc:  {
-      en: "A deliciously refreshing protein water with the juicy taste of peach and the exotic twist of yuzu. The perfect post-workout drink for anyone who values their health and performance.",
-      uz: "Shaftoli va ekzotik yuzu ta'mi bilan mazali va yangilovchi protein suv. Sog'lik va ishlashni qadrlovchilar uchun mashqdan keyin ideal ichimlik.",
-      ru: "Вкусный и освежающий протеиновый напиток с сочным вкусом персика и экзотическим оттенком юдзу. Идеальный напиток после тренировки для тех, кто ценит своё здоровье и производительность."
-    },
-    specs: [
-      { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"  }, value: "500 ml"  },
-      { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"  }, value: "20 g"    },
-      { label: { en: "Calories", uz: "Kaloriya", ru: "Калории"}, value: "16 kcal" },
-      { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"  }, value: "0 g"     }
-    ]
-  },
-  {
-    image: "AA-Drink-Sportwater-Apple-Kiwi.jpg",
-    name:  { en: "AA Drink Sportwater Apple Kiwi", uz: "AA Drink Sportwater Apple Kiwi", ru: "AA Drink Sportwater Apple Kiwi" },
-    cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
-    short: { en: "Apple & kiwi / 0.5 l", uz: "Olma va kivi / 0.5 l", ru: "Яблоко и киви / 0.5 л" },
-    desc:  {
-      en: "This sugar-free hypotonic drink with electrolytes and magnesium is the perfect hydration solution for active people. Crisp apple and kiwi flavour gives you a fresh energy boost.",
-      uz: "Shakarsiz gipotonik ichimlik, elektrolitlar va magniy bilan boyitilgan. Faol odamlar uchun eng yaxshi gidratatsiya yechimi. Yangi olma va kivi ta'mi sizga yangi energiya beradi.",
-      ru: "Этот безсахарный гипотонический напиток с электролитами и магнием — идеальное решение для гидратации активных людей. Свежий вкус яблока и киви придаёт новый заряд энергии."
-    },
-    specs: [
-      { label: { en: "Volume",       uz: "Hajm",          ru: "Объём"       }, value: "500 ml"   },
-      { label: { en: "Electrolytes", uz: "Elektrolitlar", ru: "Электролиты" }, value: "Na, K, Ca, Mg" },
-      { label: { en: "Magnesium",    uz: "Magniy",        ru: "Магний"      }, value: "+"        },
-      { label: { en: "Calories",     uz: "Kaloriya",      ru: "Калории"     }, value: "0 kcal"   }
-    ]
-  },
-  {
-    image: "AA-Drink-Sportwater-Berries-1536x1536.jpg",
-    name:  { en: "AA Drink Sportwater Berries", uz: "AA Drink Sportwater Berries", ru: "AA Drink Sportwater Berries" },
-    cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
-    short: { en: "Mixed berries / 0.5 l", uz: "Aralash rezavorlar / 0.5 l", ru: "Лесные ягоды / 0.5 л" },
-    desc:  {
-      en: "A perfect berry blend with magnesium and electrolytes to keep you refreshed and hydrated during your workout. No sugar, just pure hydration with a delicious berry twist.",
-      uz: "Magniy va elektrolitlar bilan boyitilgan mukammal rezavorlar aralashmasi, mashq davomida sizni yangilaydi va gidratatsiya qiladi. Shakarsiz, faqat toza gidratatsiya va mazali rezavor ta'mi.",
-      ru: "Идеальное сочетание ягод с магнием и электролитами, чтобы поддерживать вас в тонусе и увлажнении во время тренировки. Без сахара, только чистая гидратация с вкусом лесных ягод."
-    },
-    specs: [
-      { label: { en: "Volume",       uz: "Hajm",          ru: "Объём"       }, value: "500 ml"        },
-      { label: { en: "Electrolytes", uz: "Elektrolitlar", ru: "Электролиты" }, value: "Na, K, Ca, Mg" },
-      { label: { en: "Magnesium",    uz: "Magniy",        ru: "Магний"      }, value: "+"             },
-      { label: { en: "Calories",     uz: "Kaloriya",      ru: "Калории"     }, value: "0 kcal"        }
-    ]
-  },
-  {
-    image: "AA-Drink-Sportwater-Lemon-1536x1536.jpg",
-    name:  { en: "AA Drink Sportwater Lemon", uz: "AA Drink Sportwater Lemon", ru: "AA Drink Sportwater Lemon" },
-    cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
-    short: { en: "Lemon / 0.5 l", uz: "Limon / 0.5 l", ru: "Лимон / 0.5 л" },
-    desc:  {
-      en: "A revitalizing drink with a clean, fresh lemon taste. Zero sugar, zero calories, just pure hydration with electrolytes and magnesium for your best performance.",
-      uz: "Toza va yangilovchi limon ta'mi bilan ichimlik. Shakarsiz, kalorisiz, faqat toza gidratatsiya, elektrolitlar va magniy bilan sizning eng yaxshi ishlashingiz uchun.",
-      ru: "Оживляющий напиток с чистым, свежим вкусом лимона. Без сахара, без калорий — только чистая гидратация с электролитами и магнием для лучшей производительности."
-    },
-    specs: [
-      { label: { en: "Volume",       uz: "Hajm",          ru: "Объём"       }, value: "500 ml"        },
-      { label: { en: "Electrolytes", uz: "Elektrolitlar", ru: "Электролиты" }, value: "Na, K, Ca, Mg" },
-      { label: { en: "Magnesium",    uz: "Magniy",        ru: "Магний"      }, value: "+"             },
-      { label: { en: "Calories",     uz: "Kaloriya",      ru: "Калории"     }, value: "0 kcal"        }
-    ]
-  },
-  {
-    image: "AA-Drink-Vitwater-Lemon-Lime.jpg",
-    name:  { en: "AA Drink Vitwater Lemon Lime", uz: "AA Drink Vitwater Lemon Lime", ru: "AA Drink Vitwater Lemon Lime" },
-    cat:   { en: "Vitamin Water", uz: "Vitamin suvi", ru: "Витаминная вода" },
-    short: { en: "Lemon & lime / 0.5 l", uz: "Limon va laym / 0.5 l", ru: "Лимон и лайм / 0.5 л" },
-    desc:  {
-      en: "Vitamin-enriched water that helps with recovery and boosts your energy levels with every sip. A refreshing taste of lemon and lime with all the essential vitamins and minerals.",
-      uz: "Vitaminarlar bilan boyitilgan suv, har sipdan keyin tiklanishga yordam beradi va energiya darajangizni oshiradi. Limon va laymning yangilovchi ta'mi bilan barcha zarur vitaminlar va minerallar.",
-      ru: "Вода, обогащённая витаминами, помогает восстановлению и повышает уровень энергии с каждым глотком. Освежающий вкус лимона и лайма с необходимыми витаминами и минералами."
-    },
-    specs: [
-      { label: { en: "Volume",    uz: "Hajm",       ru: "Объём"    }, value: "500 ml"       },
-      { label: { en: "Vitamins",  uz: "Vitaminlar", ru: "Витамины" }, value: "B12, D, E, B7"},
-      { label: { en: "Minerals",  uz: "Minerallar", ru: "Минералы" }, value: "Mg, Zn"       },
-      { label: { en: "Calories",  uz: "Kaloriya",   ru: "Калории"  }, value: "0 kcal"       }
-    ]
-  },
-  {
-    image: "AA-Drink-Vitwater-Rhubarb-Strawberry-1.jpg",
-    name:  { en: "AA Drink Vitwater Rhubarb Strawberry", uz: "AA Drink Vitwater Rhubarb Strawberry", ru: "AA Drink Vitwater Rhubarb Strawberry" },
-    cat:   { en: "Vitamin Water", uz: "Vitamin suvi", ru: "Витаминная вода" },
-    short: { en: "Rhubarb & strawberry / 0.5 l", uz: "Ravent va qulupnay / 0.5 l", ru: "Ревень и клубника / 0.5 л" },
-    desc:  {
-      en: "A refreshing and revitalizing drink with vitamins and minerals to fuel your body. Rhubarb and strawberry provide a sweet and tangy flavour, perfect for any time of the day.",
-      uz: "Vitaminarlar va minerallar bilan boyitilgan yangilovchi ichimlik. Ravent va qulupnay ta'mi, kunning har vaqtida ichish uchun mukammal.",
-      ru: "Освежающий и восстанавливающий напиток с витаминами и минералами для поддержания вашего тела. Вкус ревеня и клубники идеально подходит для любого времени дня."
-    },
-    specs: [
-      { label: { en: "Volume",   uz: "Hajm",       ru: "Объём"    }, value: "500 ml"              },
-      { label: { en: "Vitamins", uz: "Vitaminlar", ru: "Витамины" }, value: "C, E, D, B12, B9, B7"},
-      { label: { en: "Minerals", uz: "Minerallar", ru: "Минералы" }, value: "Zn"                  },
-      { label: { en: "Calories", uz: "Kaloriya",   ru: "Калории"  }, value: "0 kcal"              }
-    ]
-  }
-],
-
-  energy: [
-    {
-      image: "greyMonster.jpg",
-      name:  { en: "Storm Original",     uz: "Storm Original",   ru: "Storm Original"        },
-      cat:   { en: "Energy Drink",        uz: "Energetik",        ru: "Энергетик"             },
-      short: { en: "Classic, citrus",     uz: "Klassik, sitrus",  ru: "Классический, цитрус"  },
-      desc:  {
-        en: "Classic energy drink with caffeine, taurine and B-vitamins. Energising without excess sugar. Flavour: fresh citrus.",
-        uz: "Kofein, taurin va B vitaminlari bilan klassik energetik. Ortiqcha shakarsiz. Ta'm: yangi sitrus.",
-        ru: "Классический энергетик с кофеином, таурином и витаминами B. Бодрит без лишнего сахара. Вкус: свежий цитрус."
-      },
-      specs: [
-        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml"  },
-        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "45 kcal" },
-        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "80 mg"   },
-        { label: { en: "Taurine",  uz: "Taurin",   ru: "Таурин"  }, value: "1000 mg" }
-      ]
-    },
-    {
-      image: "",
-      name:  { en: "Storm Zero",          uz: "Storm Zero",       ru: "Storm Zero"            },
-      cat:   { en: "Energy Drink",        uz: "Energetik",        ru: "Энергетик"             },
-      short: { en: "Sugar-free, mango-passion", uz: "Shakarsiz, mango-marakuya", ru: "Без сахара, манго-маракуйя" },
-      desc:  {
-        en: "Zero sugar, zero calories. All the boost, no compromises. Rich mango-passion fruit flavour.",
-        uz: "Shakar va kaloriyasiz. Barcha quvvat, murosa yo'q. Mango va marakuya ta'mi.",
-        ru: "Без сахара и калорий. Весь заряд — без компромиссов. Насыщенный вкус манго и маракуйи."
-      },
-      specs: [
-        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
-        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "0 kcal" },
-        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "80 mg"  },
-        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
-      ]
-    },
-    {
-      image: "",
-      name:  { en: "Storm Green",         uz: "Storm Green",      ru: "Storm Green"           },
-      cat:   { en: "Energy Drink",        uz: "Energetik",        ru: "Энергетик"             },
-      short: { en: "Green tea + guarana", uz: "Yashil choy + guarana", ru: "Зелёный чай + гуарана" },
-      desc:  {
-        en: "Smooth energy drink based on green tea and guarana. Gradual energy lift, no sudden spikes. No artificial colours.",
-        uz: "Yashil choy va guarana asosidagi yumshoq energetik. Silliq energiya. Sun'iy bo'yoqsiz.",
-        ru: "Мягкий энергетик на основе зелёного чая и гуараны. Плавный подъём энергии. Без красителей."
-      },
-      specs: [
-        { label: { en: "Volume",    uz: "Hajm",     ru: "Объём"     }, value: "330 ml"  },
-        { label: { en: "Calories",  uz: "Kaloriya", ru: "Калории"   }, value: "28 kcal" },
-        { label: { en: "Caffeine",  uz: "Kafein",   ru: "Кофеин"    }, value: "65 mg"   },
-        { label: { en: "Colouring", uz: "Bo'yoq",   ru: "Краситель" }, value: "None"    }
-      ]
-    }
-  ],
-
-  protein: [
-    {
-      image: "",
-      name:  { en: "Whey Classic",        uz: "Whey Classic",     ru: "Whey Classic"          },
-      cat:   { en: "Protein",             uz: "Protein",           ru: "Протеин"               },
-      short: { en: "Whey, vanilla",       uz: "Zardob, vanil",     ru: "Сывороточный, ваниль"  },
-      desc:  {
-        en: "Classic whey protein with a complete amino acid profile. Fast-absorbing, ideal post-workout.",
-        uz: "To'liq aminokislota profili bilan klassik zardob proteini. Tez hazm bo'ladi.",
-        ru: "Классический сывороточный протеин с полным аминокислотным профилем. Быстро усваивается, идеален после тренировки."
-      },
-      specs: [
-        { label: { en: "Serving",  uz: "Porsiya",  ru: "Порция"  }, value: "30 g"      },
-        { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"   }, value: "24 g"      },
-        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "122 kcal"  },
-        { label: { en: "BCAA",     uz: "BCAA",      ru: "BCAA"   }, value: "5.5 g"     }
-      ]
-    },
-    {
-      image: "",
-      name:  { en: "Plant Protein",       uz: "Plant Protein",    ru: "Plant Protein"         },
-      cat:   { en: "Protein",             uz: "Protein",           ru: "Протеин"               },
-      short: { en: "Vegan, chocolate",    uz: "O'simlik, shokolad",ru: "Растительный, шоколад" },
-      desc:  {
-        en: "Protein from peas and brown rice. Suitable for vegans and lactose-intolerant individuals. Dark chocolate flavour.",
-        uz: "No'xat va jigarrang guruch proteini. Vegan va laktoza bag'rimsizligi uchun. Ta'm: qora shokolad.",
-        ru: "Протеин из гороха и коричневого риса. Для веганов и людей с непереносимостью лактозы. Тёмный шоколад."
-      },
-      specs: [
-        { label: { en: "Serving",  uz: "Porsiya",  ru: "Порция"  }, value: "32 g"     },
-        { label: { en: "Protein",  uz: "Oqsil",    ru: "Белок"   }, value: "22 g"     },
-        { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "128 kcal" },
-        { label: { en: "Lactose",  uz: "Laktoza",  ru: "Лактоза" }, value: "None"     }
-      ]
-    },
-    {
-      image: "",
-      name:  { en: "Recovery Mix",        uz: "Recovery Mix",     ru: "Recovery Mix"          },
-      cat:   { en: "Protein",             uz: "Protein",           ru: "Протеин"               },
-      short: { en: "Protein + carbs, strawberry", uz: "Protein + uglevodlar, qulupnay", ru: "Протеин + углеводы, клубника" },
-      desc:  {
-        en: "Recovery formula combining fast protein with a carbohydrate complex. Ideal for endurance training.",
-        uz: "Tez proteinni uglevodlar kompleksi bilan birlashtiruvchi tiklanish formulasi.",
-        ru: "Формула восстановления: быстрый протеин + углеводный комплекс. Идеально для тренировок на выносливость."
-      },
-      specs: [
-        { label: { en: "Serving",  uz: "Porsiya",    ru: "Порция"   }, value: "60 g"     },
-        { label: { en: "Protein",  uz: "Oqsil",      ru: "Белок"    }, value: "20 g"     },
-        { label: { en: "Carbs",    uz: "Uglevodlar", ru: "Углеводы" }, value: "28 g"     },
-        { label: { en: "Calories", uz: "Kaloriya",   ru: "Калории"  }, value: "210 kcal" }
-      ]
-    }
-  ]
-};
-
-const TRANSLATIONS = {
-  en: {
-    hero_eyebrow:      "Quality in every bottle.",
-    hero_title:        "Energy.<br>Power.<br>Balance.",
-    hero_sub:          "Products for those who value efficiency and results — no unnecessary additives.",
-    nav_water:         "Sports water",
-    nav_energy:        "Energy drinks",
-    nav_protein:       "Protein concentrates",
-    cat_count_water:   "7 types",
-    cat_count_energy:  "3 types",
-    cat_count_protein: "3 types",
-    about_eyebrow:     "About us",
-    about_title:       "About us",
-    about_intro:       "We are a trading company specializing in the supply of modern functional beverages and high-quality protein ingredients.",
-    about_mission:     "Our mission is to help people maintain an active lifestyle, recover effectively, and achieve their sports goals with products we believe in.",
-    about_what_title:  "What we do",
-    about_what:        "We supply a wide range of sports and functional nutrition, including:",
-    about_item1:       "Celsius energy drinks",
-    about_item2:       "Protein water",
-    about_item3:       "Sports water",
-    about_item4:       "Milk and whey protein concentrates",
-    about_approach_title: "Our approach",
-    about_approach:    "We select manufacturers that meet high quality and safety standards. Each product undergoes thorough testing — from composition to taste and ease of use.",
-    about_why_title:   "Why choose us",
-    about_why1:        "Reliable supplies — stable logistics and timely delivery",
-    about_why2:        "Product quality — we work only with verified brands and certified ingredients",
-    about_why3:        "Flexibility — we offer solutions for sports stores, manufacturing companies, and the fitness industry",
-    about_why4:        "Partner service — transparency and an individual approach to each client",
-    about_goal_title:  "Our goal",
-    about_goal:        "Create an ecosystem of products that help people be more energetic, stronger, and healthier every day.",
-    contacts_label:    "Contacts",
-    view_btn:          "View &#8594;",
-  },
-  uz: {
-    hero_eyebrow:      "Har bir shishada sifat.",
-    hero_title:        "Energiya.<br>Kuch.<br>Muvozanat.",
-    hero_sub:          "Samaradorlik va natijalarni qadrlaydiganlar uchun mahsulotlar — ortiqcha qo'shimchalarsiz.",
-    nav_water:         "Suv",
-    nav_energy:        "Energetiklar",
-    nav_protein:       "Protein",
-    cat_count_water:   "7 tur",
-    cat_count_energy:  "3 tur",
-    cat_count_protein: "3 tur",
-    about_eyebrow:     "Biz haqimizda",
-    about_title:       "Biz haqimizda",
-    about_intro:       "Biz zamonaviy funktsional ichimliklar va yuqori sifatli protein ingredientlarini yetkazishda ixtisoslashgan savdo kompaniyasimiz.",
-    about_mission:     "Bizning missiyamiz odamlarga faol turmush tarzini saqlab qolishga, samarali tiklanishga va biz ishongan mahsulotlar bilan sport maqsadlariga erishishga yordam berishdir.",
-    about_what_title:  "Nima bilan shug'ullanamiz",
-    about_what:        "Biz keng ko'lamda sport va funktsional oziq-ovqat yetkazamiz, jumladan:",
-    about_item1:       "Celsius energetik ichimliklarni",
-    about_item2:       "Protein suvni",
-    about_item3:       "Sport suvini",
-    about_item4:       "Sut va zardob protein konsentratlari",
-    about_approach_title: "Bizning yondashuv",
-    about_approach:    "Biz yuqori sifat va xavfsizlik standartlariga mos keladigan ishlab chiqaruvchilarni tanlaydi. Har bir mahsulot diqqatli tekshiruvdan o'tadi — tarkibdan dan ta'mga va foydalanish qulayligi.",
-    about_why_title:   "Nega bizni tanlaysiz",
-    about_why1:        "Ishonchli yetkazish — barqaror logistika va sroqli yetkazish",
-    about_why2:        "Mahsulot sifati — biz faqat tasdiqlangan brendlar va sertifikatsiyalangan ingredientlar bilan ishlaydi",
-    about_why3:        "Moslashuvchanlik — sport do'konlari, ishlab chiqarish kompaniyalari va fitness sanoatiga yechimlarni taqdim etamiz",
-    about_why4:        "Shriklik xizmati — shaffoflik va har bir mijozga shaxsiy yondashuv",
-    about_goal_title:  "Bizning maqsad",
-    about_goal:        "Odamlarga har kuni energikroq, kuchliroq va sog'lomroq bo'lishiga yordam beradigan mahsulotlar ekosistemasi yarating.",
-    contacts_label:    "Aloqa",
-    view_btn:          "Ko'rish &#8594;",
-  },
-  ru: {
-    hero_eyebrow:      "Качество в каждой банке.",
-    hero_title:        "Энергия.<br>Сила.<br>Баланс.",
-    hero_sub:          "Продукты для тех, кто ценит результат и эффективность — без лишних добавок.",
-    nav_water:         "Спортивная вода",
-    nav_energy:        "Энергетики",
-    nav_protein:       "Протеиновые концентраты",
-    cat_count_water:   "7 видов",
-    cat_count_energy:  "3 вида",
-    cat_count_protein: "3 вида",
-    about_eyebrow:     "О нас",
-    about_title:       "О нас",
-    about_intro:       "Мы - торговая компания, специализирующаяся на поставках современных функциональных напитков и высококачественных белковых ингредиентов.",
-    about_mission:     "Наша миссия - помогать людям поддерживать активный ритм жизни, эффективно восстанавливаться и достигать своих спортивных целей с помощью продуктов, в которых мы уверены.",
-    about_what_title:  "Чем мы занимаемся",
-    about_what:        "Мы поставляем широкий ассортимент спортивного и функционального питания, в том числе:",
-    about_item1:       "энергетические напитки Celsius",
-    about_item2:       "протеиновую воду",
-    about_item3:       "спортивную воду",
-    about_item4:       "концентраты молочного и сывороточного белка",
-    about_approach_title: "Наш подход",
-    about_approach:    "Мы выбираем производителей, которые соответствуют высоким стандартам качества и безопасности. Каждый продукт проходит тщательную проверку - от состава до вкуса и удобства использования.",
-    about_why_title:   "Почему выбирают нас",
-    about_why1:        "Надежность поставок - стабильная логистика и точность сроков",
-    about_why2:        "Качество продукции - мы работаем только с проверенными брендами и сертифицированными ингредиентами",
-    about_why3:        "Гибкость - предлагаем решения как для спортивных магазинов, так и для производственных компаний или фитнес-индустрии",
-    about_why4:        "Партнерский сервис - открытость, прозрачность и индивидуальный подход к каждому клиенту",
-    about_goal_title:  "Наша цель",
-    about_goal:        "Создавать экосистему продуктов, которые помогают людям быть энергичнее, сильнее и здоровее ежедневно.",
-    contacts_label:    "Контакты",
-    view_btn:          "Смотреть &#8594;",
-  }
-};
-
 let currentLang = 'ru';
 
 function placeholderHTML() {
@@ -1034,7 +670,6 @@ function showCategory(cat, e) {
   if (e && e.currentTarget) e.currentTarget.classList.add('active');
 }
 
-
 function openModal(cat, idx) {
   var p = PRODUCTS[cat][idx];
   var l = currentLang;
@@ -1057,7 +692,6 @@ function openModal(cat, idx) {
   document.body.style.overflow = 'hidden';
 }
 
-/* Закрытие модального окна */
 function closeModal(e) {
   if (!e || e.target === document.getElementById('modal')) {
     document.getElementById('modal').classList.remove('open');
@@ -1065,12 +699,10 @@ function closeModal(e) {
   }
 }
 
-/* Escape закрывает модалку */
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
 
-/* Смена языка */
 function setLang(lang) {
   currentLang = lang;
   document.querySelectorAll('.lang-btn').forEach(function(b) {
