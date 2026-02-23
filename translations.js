@@ -13,7 +13,7 @@
 ============================================================ */
 const TRANSLATIONS = {
   en: {
-    hero_eyebrow:         "Quality in every bottle.",
+    hero_eyebrow:         "Quality in Every Product We Sell.",
     hero_title:           "Energy.<br>Power.<br>Balance.",
     hero_sub:             "Products for those who value efficiency and results — no unnecessary additives.",
     nav_water:            "Sports water",
@@ -21,7 +21,7 @@ const TRANSLATIONS = {
     nav_protein:          "Protein concentrates",
     cat_count_water:      "7 types",
     cat_count_energy:     "14 types",
-    cat_count_protein:    "3 types",
+    cat_count_protein:    "9 types",
     about_title:          "About us",
     about_intro:          "We are a trading company specializing in the supply of modern functional beverages and high-quality protein ingredients.",
     about_mission:        "Our mission is to help people maintain an active lifestyle, recover effectively, and achieve their sports goals with products we believe in.",
@@ -44,7 +44,7 @@ const TRANSLATIONS = {
     view_btn:             "View &#8594;",
   },
   uz: {
-    hero_eyebrow:         "Har bir shishada sifat.",
+    hero_eyebrow:         "Sotayotgan har bir mahsulotimizda sifat.",
     hero_title:           "Energiya.<br>Kuch.<br>Muvozanat.",
     hero_sub:             "Samaradorlik va natijalarni qadrlaydiganlar uchun mahsulotlar — ortiqcha qo'shimchalarsiz.",
     nav_water:            "Sport suvi",
@@ -52,7 +52,7 @@ const TRANSLATIONS = {
     nav_protein:          "Protein konsentratlar",
     cat_count_water:      "7 tur",
     cat_count_energy:     "14 tur",
-    cat_count_protein:    "3 tur",
+    cat_count_protein:    "9 tur",
     about_title:          "Biz haqimizda",
     about_intro:          "Biz zamonaviy funktsional ichimliklar va yuqori sifatli protein ingredientlarini yetkazishda ixtisoslashgan savdo kompaniyasimiz.",
     about_mission:        "Bizning missiyamiz odamlarga faol turmush tarzini saqlab qolishga, samarali tiklanishga va biz ishongan mahsulotlar bilan sport maqsadlariga erishishga yordam berishdir.",
@@ -75,7 +75,7 @@ const TRANSLATIONS = {
     view_btn:             "Ko'rish &#8594;",
   },
   ru: {
-    hero_eyebrow:         "Качество в каждой банке.",
+    hero_eyebrow:         "Качество в каждом продукте, который мы продаём.",
     hero_title:           "Энергия.<br>Сила.<br>Баланс.",
     hero_sub:             "Продукты для тех, кто ценит результат и эффективность — без лишних добавок.",
     nav_water:            "Спортивная вода",
@@ -83,7 +83,7 @@ const TRANSLATIONS = {
     nav_protein:          "Протеиновые концентраты",
     cat_count_water:      "7 видов",
     cat_count_energy:     "14 видов",
-    cat_count_protein:    "3 вида",
+    cat_count_protein:    "9 видов",
     about_title:          "О нас",
     about_intro:          "Мы — торговая компания, специализирующаяся на поставках современных функциональных напитков и высококачественных белковых ингредиентов.",
     about_mission:        "Наша миссия — помогать людям поддерживать активный ритм жизни, эффективно восстанавливаться и достигать спортивных целей с помощью продуктов, в которых мы уверены.",
@@ -487,12 +487,12 @@ const PRODUCTS = {
       desc:  {
         en: "MPC-40 is an entry-level milk protein concentrate with a balanced ratio of protein and lactose. Ideal for cheese production, fermented dairy products and food applications where both protein and carbohydrate content matter. Sourced from Poland, certified BRC, IFS, Halal and Kosher.",
         uz: "MPC-40 — oqsil va laktoza muvozanatli nisbati bilan boshlang'ich darajadagi sut oqsili kontsentrati. Pishloq ishlab chiqarish, achitilgan sut mahsulotlari va oqsil hamda uglevodlar tarkibi muhim bo'lgan oziq-ovqat mahsulotlari uchun ideal. Polshadan yetkaziladi, BRC, IFS, Halal va Kosher sertifikatlangan.",
-        ru: "MPC-40 — концентрат молочного белка начального уровня со сбалансированным соотношением белка и лактозы. Идеален для производства сыров, кисломолочных продуктов и пищевых применений, где важно содержание как белка, так и углеводов. Производство Польша, сертификаты BRC, IFS, Халяль, Кошер."
+        ru: "MPC-40 — концентрат молочного белка начального уровня со сбалансированным соотношением белка и лактозы. Идеален для производства сыров, кисломолочных продуктов и пищевых применений, где важно содержание как белка, так и углеводов."
       },
       specs: [
         { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~40%"   },
         { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
-        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "EU" }
       ]
     },
     {
@@ -508,7 +508,7 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~70%"   },
         { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
-        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "EU" }
       ]
     },
     {
@@ -524,7 +524,7 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~80%"   },
         { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
-        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "EU" }
       ]
     },
     {
@@ -558,7 +558,7 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~35%"   },
         { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
-        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "EU" }
       ]
     },
     {
@@ -574,7 +574,7 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~50%"   },
         { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
-        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "EU" }
       ]
     },
     {
@@ -590,7 +590,7 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~60%"   },
         { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
-        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "EU" }
       ]
     },
     {
@@ -606,7 +606,7 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~70%"   },
         { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"  },
-        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "Poland" }
+        { label: { en: "Origin",    uz: "Kelib chiqish", ru: "Происхождение" }, value: "EU" }
       ]
     },
     {
