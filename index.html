@@ -16,6 +16,7 @@
       --fg:     #1C1C1A;
       --muted:  #8C8A84;
       --accent: #3A5244;
+      --grey:   #ebebe1;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -159,12 +160,12 @@
     .category-panel.visible { display: block; }
 
     .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;  /* ← центрирование */
-  }
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
     /* ══════════════════════════════════════════════
        КАРТОЧКА ТОВАРА
@@ -185,7 +186,7 @@
     /* Блок фотографии */
     .product-img-wrap {
       width: 100%;
-      aspect-ratio: 3 / 4; /* switched to vertical (portrait) photos */
+      aspect-ratio: 3 / 4;
       overflow: hidden;
       background: #fffeff;
       display: flex;
@@ -360,36 +361,80 @@
 
     /* ── ABOUT ── */
     #about {
-      background: var(--accent);
-      color: var(--white);
-      padding: 90px 48px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
+      background: var(--grey);
+      color: var(--fg);
+      padding: 90px clamp(24px, 5vw, 120px);
     }
+
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
     .about-eyebrow {
-      font-size: 10px; letter-spacing: 5px;
-      text-transform: uppercase; opacity: .55;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--accent);
       margin-bottom: 18px;
     }
+
     .about-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(30px, 3.5vw, 48px);
-      font-weight: 300; line-height: 1.2;
-      margin-bottom: 24px;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 32px;
     }
-    .about-text { font-size: 14px; line-height: 1.95; opacity: .75; }
 
-    .about-stats { display: flex; flex-direction: column; gap: 32px; }
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 52px; font-weight: 300;
-      line-height: 1; margin-bottom: 6px;
+    .about-section {
+      margin-bottom: 48px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
     }
-    .stat-label {
-      font-size: 11px; letter-spacing: 2px;
-      text-transform: uppercase; opacity: .6;
+
+    .about-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--fg);
+    }
+
+    .about-text {
+      font-size: 17px;
+      text-align: justify;
+      line-height: 1.95;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .about-list {
+      list-style: none;
+      margin: 16px 0 0 0;
+    }
+
+    .about-list li {
+      font-size: 16px;
+      text-align: justify;
+      line-height: 1.8;
+      color: var(--muted);
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .about-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
     }
 
     /* ── ФУТЕР ── */
@@ -435,10 +480,11 @@
       #hero  { padding: 60px 22px 48px; }
       #catalog { padding: 40px 22px 70px; }
       .products-grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 10px; }
-      #about { grid-template-columns: 1fr; padding: 60px 22px; gap: 40px; }
+      #about { padding: 60px 22px; }
       footer { padding: 40px 22px; }
       .nav-item { padding: 18px 16px; font-size: 10px; letter-spacing: 1.5px; }
       .modal-body { padding: 20px 20px 24px; }
+      .about-section h3 { font-size: 20px; }
     }
   </style>
 </head>
@@ -528,26 +574,47 @@
 </div>
 
 <!-- ============================================================
-     ABOUT — легенда компании
+     ABOUT — информация о компании
 ============================================================ -->
 <section id="about">
-  <div>
-    <p  class="about-eyebrow" data-key="about_eyebrow">About us</p>
-    <h2 class="about-title"   data-key="about_title">We believe in what you drink</h2>
-    <p  class="about-text"    data-key="about_text">ZAMIX is an Uzbek beverage and sports nutrition brand born from one simple idea: people deserve to know what's in their drink. We work with clean mountain sources and trusted protein suppliers so every product speaks for itself — no artificial flavours, no hidden sugar. Only what's needed.</p>
-  </div>
-  <div class="about-stats">
-    <div class="stat-item">
-      <p class="stat-number">100%</p>
-      <p class="stat-label" data-key="stat1">Natural composition</p>
+  <div class="about-container">
+    <h2 class="about-title" data-key="about_title">О нас</h2>
+
+    <div class="about-section">
+      <p class="about-text" data-key="about_intro">Мы - торговая компания, специализирующаяся на поставках современных функциональных напитков и высококачественных белковых ингредиентов.</p>
+      
+      <p class="about-text" data-key="about_mission">Наша миссия - помогать людям поддерживать активный ритм жизни, эффективно восстанавливаться и достигать своих спортивных целей с помощью продуктов, в которых мы уверены.</p>
     </div>
-    <div class="stat-item">
-      <p class="stat-number">0</p>
-      <p class="stat-label" data-key="stat2">Artificial colours</p>
+
+    <div class="about-section">
+      <h3 data-key="about_what_title">Чем мы занимаемся</h3>
+      <p class="about-text" data-key="about_what">Мы поставляем широкий ассортимент спортивного и функционального питания, в том числе:</p>
+      <ul class="about-list">
+        <li data-key="about_item1">энергетические напитки Celsius</li>
+        <li data-key="about_item2">протеиновую воду</li>
+        <li data-key="about_item3">спортивную воду</li>
+        <li data-key="about_item4">концентраты молочного и сывороточного белка</li>
+      </ul>
     </div>
-    <div class="stat-item">
-      <p class="stat-number">&#8734;</p>
-      <p class="stat-label" data-key="stat3">Care for you</p>
+
+    <div class="about-section">
+      <h3 data-key="about_approach_title">Наш подход</h3>
+      <p class="about-text" data-key="about_approach">Мы выбираем производителей, которые соответствуют высоким стандартам качества и безопасности. Каждый продукт проходит тщательную проверку - от состава до вкуса и удобства использования.</p>
+    </div>
+
+    <div class="about-section">
+      <h3 data-key="about_why_title">Почему выбирают нас</h3>
+      <ul class="about-list">
+        <li data-key="about_why1"><strong>Надежность поставок</strong> - стабильная логистика и точность сроков</li>
+        <li data-key="about_why2"><strong>Качество продукции</strong> - мы работаем только с проверенными брендами и сертифицированными ингредиентами</li>
+        <li data-key="about_why3"><strong>Гибкость</strong> - предлагаем решения как для спортивных магазинов, так и для производственных компаний или фитнес-индустрии</li>
+        <li data-key="about_why4"><strong>Партнерский сервис</strong> - открытость, прозрачность и индивидуальный подход к каждому клиенту</li>
+      </ul>
+    </div>
+
+    <div class="about-section">
+      <h3 data-key="about_goal_title">Наша цель</h3>
+      <p class="about-text" data-key="about_goal">Создавать экосистему продуктов, которые помогают людям быть энергичнее, сильнее и здоровее ежедневно.</p>
     </div>
   </div>
 </section>
@@ -563,18 +630,15 @@
   </div>  
   <div class="footer-contacts">
     <p class="contacts-label" data-key="contacts_label">Contacts</p>
-    <!-- Замени your_telegram на свой username -->
     <a class="contact-link" href="https://t.me/agvuz" target="_blank">
       <span class="icon">📲</span><span>Telegram</span>
     </a>
-    <!-- Замени на свой email -->
     <a class="contact-link" href="https://wa.me/998990008673" target="_blank">
       <span class="icon">💬</span><span>WhatsApp</span>
     </a>
     <a class="contact-link" href="mailto:info@zamix.com">
       <span class="icon">✉️</span><span>info@zamix.com</span>
     </a>
-    <!-- Замени на свой номер -->
     <a class="contact-link" href="tel:+998990008673">
       <span class="icon">📞</span><span>+998 99 000 86 73</span>
     </a>
@@ -583,24 +647,7 @@
 
 
 <script>
-/* ==============================================================
-   ДАННЫЕ ТОВАРОВ
-   ────────────────────────────────────────────────────────────
-
-   КАК ДОБАВИТЬ ФОТО К ТОВАРУ:
-     1. Создай рядом с index.html папку, например: foto
-     2. Положи туда фото товара: foto/water1.jpg
-     3. В поле image укажи путь:   image: "foto/water1.jpg"
-     Если фото нет — оставь пустым: image: ""
-
-   КАК ДОБАВИТЬ НОВЫЙ ТОВАР:
-     Скопируй любой блок { image, name, cat, short, desc, specs }
-     и вставь его в нужный массив (water, energy или protein).
-     Не забудь запятую между блоками!
-================================================================ */
 const PRODUCTS = {
-
-  /* ─── ВОДА ─── */
   water: [
   {
     image: "AA-Drink-Proteinwater-Grape-Gojiberry.jpg",
@@ -723,7 +770,6 @@ const PRODUCTS = {
   }
 ],
 
-  /* ─── ЭНЕРГЕТИКИ ─── */
   energy: [
     {
       image: "greyMonster.jpg",
@@ -778,7 +824,6 @@ const PRODUCTS = {
     }
   ],
 
-  /* ─── ПРОТЕИН ─── */
   protein: [
     {
       image: "",
@@ -832,12 +877,8 @@ const PRODUCTS = {
       ]
     }
   ]
-
 };
 
-/* ==============================================================
-   ПЕРЕВОДЫ ИНТЕРФЕЙСА
-================================================================ */
 const TRANSLATIONS = {
   en: {
     hero_eyebrow:      "Quality in every bottle.",
@@ -850,11 +891,24 @@ const TRANSLATIONS = {
     cat_count_energy:  "3 types",
     cat_count_protein: "3 types",
     about_eyebrow:     "About us",
-    about_title:       "We believe in what you drink",
-    about_text:        "ZAMIX is an Uzbek beverage and sports nutrition brand. We work with clean mountain sources and trusted protein suppliers. Every product speaks for itself — no artificial flavours, no hidden sugar.",
-    stat1:             "Natural composition",
-    stat2:             "Artificial colours",
-    stat3:             "Care for you",
+    about_title:       "About us",
+    about_intro:       "We are a trading company specializing in the supply of modern functional beverages and high-quality protein ingredients.",
+    about_mission:     "Our mission is to help people maintain an active lifestyle, recover effectively, and achieve their sports goals with products we believe in.",
+    about_what_title:  "What we do",
+    about_what:        "We supply a wide range of sports and functional nutrition, including:",
+    about_item1:       "Celsius energy drinks",
+    about_item2:       "Protein water",
+    about_item3:       "Sports water",
+    about_item4:       "Milk and whey protein concentrates",
+    about_approach_title: "Our approach",
+    about_approach:    "We select manufacturers that meet high quality and safety standards. Each product undergoes thorough testing — from composition to taste and ease of use.",
+    about_why_title:   "Why choose us",
+    about_why1:        "Reliable supplies — stable logistics and timely delivery",
+    about_why2:        "Product quality — we work only with verified brands and certified ingredients",
+    about_why3:        "Flexibility — we offer solutions for sports stores, manufacturing companies, and the fitness industry",
+    about_why4:        "Partner service — transparency and an individual approach to each client",
+    about_goal_title:  "Our goal",
+    about_goal:        "Create an ecosystem of products that help people be more energetic, stronger, and healthier every day.",
     contacts_label:    "Contacts",
     view_btn:          "View &#8594;",
   },
@@ -869,11 +923,24 @@ const TRANSLATIONS = {
     cat_count_energy:  "3 tur",
     cat_count_protein: "3 tur",
     about_eyebrow:     "Biz haqimizda",
-    about_title:       "Ichimlikning tarkibiga ishoning",
-    about_text:        "ZAMIX — o'zbek brendi bo'lib, biz toza tog' buloqlari va ishonchli protein yetkazib beruvchilar bilan ishlaymiz. Har bir mahsulot o'zi uchun gapiradi — sun'iy lazzat va yashirin shakar yo'q.",
-    stat1:             "Tabiiy tarkib",
-    stat2:             "Sun'iy bo'yoqlar",
-    stat3:             "Siz uchun g'amxo'rlik",
+    about_title:       "Biz haqimizda",
+    about_intro:       "Biz zamonaviy funktsional ichimliklar va yuqori sifatli protein ingredientlarini yetkazishda ixtisoslashgan savdo kompaniyasimiz.",
+    about_mission:     "Bizning missiyamiz odamlarga faol turmush tarzini saqlab qolishga, samarali tiklanishga va biz ishongan mahsulotlar bilan sport maqsadlariga erishishga yordam berishdir.",
+    about_what_title:  "Nima bilan shug'ullanamiz",
+    about_what:        "Biz keng ko'lamda sport va funktsional oziq-ovqat yetkazamiz, jumladan:",
+    about_item1:       "Celsius energetik ichimliklarni",
+    about_item2:       "Protein suvni",
+    about_item3:       "Sport suvini",
+    about_item4:       "Sut va zardob protein konsentratlari",
+    about_approach_title: "Bizning yondashuv",
+    about_approach:    "Biz yuqori sifat va xavfsizlik standartlariga mos keladigan ishlab chiqaruvchilarni tanlaydi. Har bir mahsulot diqqatli tekshiruvdan o'tadi — tarkibdan dan ta'mga va foydalanish qulayligi.",
+    about_why_title:   "Nega bizni tanlaysiz",
+    about_why1:        "Ishonchli yetkazish — barqaror logistika va sroqli yetkazish",
+    about_why2:        "Mahsulot sifati — biz faqat tasdiqlangan brendlar va sertifikatsiyalangan ingredientlar bilan ishlaydi",
+    about_why3:        "Moslashuvchanlik — sport do'konlari, ishlab chiqarish kompaniyalari va fitness sanoatiga yechimlarni taqdim etamiz",
+    about_why4:        "Shriklik xizmati — shaffoflik va har bir mijozga shaxsiy yondashuv",
+    about_goal_title:  "Bizning maqsad",
+    about_goal:        "Odamlarga har kuni energikroq, kuchliroq va sog'lomroq bo'lishiga yordam beradigan mahsulotlar ekosistemasi yarating.",
     contacts_label:    "Aloqa",
     view_btn:          "Ko'rish &#8594;",
   },
@@ -888,22 +955,31 @@ const TRANSLATIONS = {
     cat_count_energy:  "3 вида",
     cat_count_protein: "3 вида",
     about_eyebrow:     "О нас",
-    about_title:       "Мы верим в то, что пьёшь",
-    about_text:        "ZAMIX — узбекский бренд напитков и спортивного питания. Мы работаем с чистыми горными источниками и проверенными поставщиками протеина. Каждый продукт говорит сам за себя — без ароматизаторов, без скрытого сахара.",
-    stat1:             "Натуральный состав",
-    stat2:             "Искусственных красителей",
-    stat3:             "Забота о вас",
+    about_title:       "О нас",
+    about_intro:       "Мы - торговая компания, специализирующаяся на поставках современных функциональных напитков и высококачественных белковых ингредиентов.",
+    about_mission:     "Наша миссия - помогать людям поддерживать активный ритм жизни, эффективно восстанавливаться и достигать своих спортивных целей с помощью продуктов, в которых мы уверены.",
+    about_what_title:  "Чем мы занимаемся",
+    about_what:        "Мы поставляем широкий ассортимент спортивного и функционального питания, в том числе:",
+    about_item1:       "энергетические напитки Celsius",
+    about_item2:       "протеиновую воду",
+    about_item3:       "спортивную воду",
+    about_item4:       "концентраты молочного и сывороточного белка",
+    about_approach_title: "Наш подход",
+    about_approach:    "Мы выбираем производителей, которые соответствуют высоким стандартам качества и безопасности. Каждый продукт проходит тщательную проверку - от состава до вкуса и удобства использования.",
+    about_why_title:   "Почему выбирают нас",
+    about_why1:        "Надежность поставок - стабильная логистика и точность сроков",
+    about_why2:        "Качество продукции - мы работаем только с проверенными брендами и сертифицированными ингредиентами",
+    about_why3:        "Гибкость - предлагаем решения как для спортивных магазинов, так и для производственных компаний или фитнес-индустрии",
+    about_why4:        "Партнерский сервис - открытость, прозрачность и индивидуальный подход к каждому клиенту",
+    about_goal_title:  "Наша цель",
+    about_goal:        "Создавать экосистему продуктов, которые помогают людям быть энергичнее, сильнее и здоровее ежедневно.",
     contacts_label:    "Контакты",
     view_btn:          "Смотреть &#8594;",
   }
 };
 
-/* ==============================================================
-   ЛОГИКА — не меняй
-================================================================ */
 let currentLang = 'ru';
 
-/* SVG-иконка placeholder */
 function placeholderHTML() {
   return `<div class="img-placeholder">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
@@ -916,7 +992,6 @@ function placeholderHTML() {
   </div>`;
 }
 
-/* HTML для блока с фото */
 function imgHTML(src) {
   if (src) {
     return `<img src="${src}" alt=""
@@ -925,7 +1000,6 @@ function imgHTML(src) {
   return placeholderHTML();
 }
 
-/* Отрисовка карточек */
 function renderProducts() {
   const t = TRANSLATIONS[currentLang];
   ['water', 'energy', 'protein'].forEach(function(cat) {
@@ -949,7 +1023,6 @@ function renderProducts() {
   });
 }
 
-/* Переключение категории */
 function showCategory(cat, e) {
   document.querySelectorAll('.category-panel').forEach(function(p) {
     p.classList.remove('visible');
@@ -961,7 +1034,7 @@ function showCategory(cat, e) {
   if (e && e.currentTarget) e.currentTarget.classList.add('active');
 }
 
-/* Открытие модального окна */
+
 function openModal(cat, idx) {
   var p = PRODUCTS[cat][idx];
   var l = currentLang;
@@ -1020,4 +1093,3 @@ setLang('ru');
 </script>
 </body>
 </html>
-
