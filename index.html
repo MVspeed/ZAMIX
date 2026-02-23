@@ -139,30 +139,20 @@
 
     .cat-heading {
       display: flex;
-      align-items: baseline;
-      gap: 14px;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 32px;
+      text-align: center;
     }
     .cat-heading h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 30px;
       font-weight: 300;
-    }
-
-    /* Центрирование текста в каталоге на мобильных устройствах */
-    @media (max-width: 600px) {
-      .cat-heading,
-      .cat-heading h2,
-      .cat-heading span,
-      .product-name,
-      .product-short {
-        text-align: center !important;
-        justify-content: center !important;
-        margin-left: auto;
-        margin-right: auto;
-      }
+      text-align: center;
     }
     .cat-heading span {
+        text-align: center;
       font-size: 11px;
       letter-spacing: 2px;
       color: var(--muted);
