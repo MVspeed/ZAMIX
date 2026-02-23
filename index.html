@@ -159,10 +159,12 @@
     .category-panel.visible { display: block; }
 
     .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;  /* ← центрирование */
+  }
 
     /* ══════════════════════════════════════════════
        КАРТОЧКА ТОВАРА
