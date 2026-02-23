@@ -13,7 +13,7 @@
 ============================================================ */
 const TRANSLATIONS = {
   en: {
-    hero_eyebrow:         "Quality in Every Product We Sell.",
+    hero_eyebrow:         "Quality in every product we sell.",
     hero_title:           "Energy.<br>Power.<br>Balance.",
     hero_sub:             "Products for those who value efficiency and results — no unnecessary additives.",
     nav_water:            "Sports water",
