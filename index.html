@@ -139,20 +139,16 @@
 
     .cat-heading {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
+      align-items: baseline;
+      gap: 14px;
       margin-bottom: 32px;
-      text-align: center;
     }
     .cat-heading h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 30px;
       font-weight: 300;
-      text-align: center;
     }
     .cat-heading span {
-        text-align: center;
       font-size: 11px;
       letter-spacing: 2px;
       color: var(--muted);
@@ -489,7 +485,7 @@
 ============================================================ -->
 <section id="catalog">
 
-  <div class="category-panel visible" id="panel-water">
+  <div class="category-panel visible" id="panel-water" style="text-align:center;">
     <div class="cat-heading">
       <h2 data-key="nav_water">Water</h2>
       <span data-key="cat_count_water">3 products</span>
@@ -497,7 +493,7 @@
     <div class="products-grid" id="grid-water"></div>
   </div>
 
-  <div class="category-panel" id="panel-energy">
+  <div class="category-panel" id="panel-energy" style="text-align:center;">
     <div class="cat-heading">
       <h2 data-key="nav_energy">Energy Drinks</h2>
       <span data-key="cat_count_energy">3 products</span>
@@ -505,7 +501,7 @@
     <div class="products-grid" id="grid-energy"></div>
   </div>
 
-  <div class="category-panel" id="panel-protein">
+  <div class="category-panel" id="panel-protein" style="text-align:center;">
     <div class="cat-heading">
       <h2 data-key="nav_protein">Protein</h2>
       <span data-key="cat_count_protein">3 products</span>
