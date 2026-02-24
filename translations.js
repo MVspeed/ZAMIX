@@ -122,7 +122,7 @@ const PRODUCTS = {
   ──────────────────────────────────────── */
   water: [
     {
-      image: "AA-Drink-Proteinwater-Grape-Gojiberry.jpg",
+      image: "img/AA-Drink-Proteinwater-Grape-Gojiberry.jpg",
       name:  { en: "AA Drink Protein Water Grape Gojiberry", uz: "AA Drink Protein Water Grape Gojiberry", ru: "AA Drink Protein Water Grape Gojiberry" },
       cat:   { en: "Protein Water", uz: "Protein suv", ru: "Протеиновая вода" },
       short: { en: "Grape & goji berry / 0.5 l", uz: "Uzum va goji / 0.5 l", ru: "Виноград и годжи / 0.5 л" },
@@ -139,7 +139,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "AA-Drink-Proteinwater-Peach-Yuzu.jpg",
+      image: "img/AA-Drink-Proteinwater-Peach-Yuzu.jpg",
       name:  { en: "AA Drink Protein Water Peach Yuzu", uz: "AA Drink Protein Water Peach Yuzu", ru: "AA Drink Protein Water Peach Yuzu" },
       cat:   { en: "Protein Water", uz: "Protein suv", ru: "Протеиновая вода" },
       short: { en: "Peach & yuzu / 0.5 l", uz: "Shaftoli va yuzu / 0.5 l", ru: "Персик и юдзу / 0.5 л" },
@@ -156,7 +156,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "AA-Drink-Sportwater-Apple-Kiwi.jpg",
+      image: "img/AA-Drink-Sportwater-Apple-Kiwi.jpg",
       name:  { en: "AA Drink Sportwater Apple Kiwi", uz: "AA Drink Sportwater Apple Kiwi", ru: "AA Drink Sportwater Apple Kiwi" },
       cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
       short: { en: "Apple & kiwi / 0.5 l", uz: "Olma va kivi / 0.5 l", ru: "Яблоко и киви / 0.5 л" },
@@ -173,7 +173,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "AA-Drink-Sportwater-Berries-1536x1536.jpg",
+      image: "img/AA-Drink-Sportwater-Berries-1536x1536.jpg",
       name:  { en: "AA Drink Sportwater Berries", uz: "AA Drink Sportwater Berries", ru: "AA Drink Sportwater Berries" },
       cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
       short: { en: "Mixed berries / 0.5 l", uz: "Aralash rezavorlar / 0.5 l", ru: "Лесные ягоды / 0.5 л" },
@@ -190,7 +190,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "AA-Drink-Sportwater-Lemon-1536x1536.jpg",
+      image: "img/AA-Drink-Sportwater-Lemon-1536x1536.jpg",
       name:  { en: "AA Drink Sportwater Lemon", uz: "AA Drink Sportwater Lemon", ru: "AA Drink Sportwater Lemon" },
       cat:   { en: "Sport Water", uz: "Sport suvi", ru: "Спортивная вода" },
       short: { en: "Lemon / 0.5 l", uz: "Limon / 0.5 l", ru: "Лимон / 0.5 л" },
@@ -207,7 +207,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "AA-Drink-Vitwater-Lemon-Lime.jpg",
+      image: "img/AA-Drink-Vitwater-Lemon-Lime.jpg",
       name:  { en: "AA Drink Vitwater Lemon Lime", uz: "AA Drink Vitwater Lemon Lime", ru: "AA Drink Vitwater Lemon Lime" },
       cat:   { en: "Vitamin Water", uz: "Vitamin suvi", ru: "Витаминная вода" },
       short: { en: "Lemon & lime / 0.5 l", uz: "Limon va laym / 0.5 l", ru: "Лимон и лайм / 0.5 л" },
@@ -224,7 +224,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "AA-Drink-Vitwater-Rhubarb-Strawberry-1.jpg",
+      image: "img/AA-Drink-Vitwater-Rhubarb-Strawberry-1.jpg",
       name:  { en: "AA Drink Vitwater Rhubarb Strawberry", uz: "AA Drink Vitwater Rhubarb Strawberry", ru: "AA Drink Vitwater Rhubarb Strawberry" },
       cat:   { en: "Vitamin Water", uz: "Vitamin suvi", ru: "Витаминная вода" },
       short: { en: "Rhubarb & strawberry / 0.5 l", uz: "Ravent va qulupnay / 0.5 l", ru: "Ревень и клубника / 0.5 л" },
@@ -249,7 +249,7 @@ const PRODUCTS = {
 
     /* ── CELSIUS ── */
     {
-      image: "Celsius-Arctic-Vibe.jpg",
+      image: "img/Celsius-Arctic-Vibe.jpg",
       name:  { en: "Celsius Arctic Vibe", uz: "Celsius Arctic Vibe", ru: "Celsius Arctic Vibe" },
       cat:   { en: "Celsius", uz: "Celsius", ru: "Celsius" },
       short: { en: "Frozen berry / 0.25 l / sugar-free", uz: "Muzlatilgan rezavor / 0.25 l / shakarsiz", ru: "Замороженные ягоды / 0.25 л / без сахара" },
@@ -266,7 +266,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "Celsius-Peach-Vibe.jpg",
+      image: "img/Celsius-Peach-Vibe.jpg",
       name:  { en: "Celsius Peach Vibe", uz: "Celsius Peach Vibe", ru: "Celsius Peach Vibe" },
       cat:   { en: "Celsius", uz: "Celsius", ru: "Celsius" },
       short: { en: "White peach / 0.25 l / sugar-free", uz: "Oq shaftoli / 0.25 l / shakarsiz", ru: "Белый персик / 0.25 л / без сахара" },
@@ -283,7 +283,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "Celsius-Mango-Lemonade.jpg",
+      image: "img/Celsius-Mango-Lemonade.jpg",
       name:  { en: "Celsius Mango Lemonade", uz: "Celsius Mango Lemonade", ru: "Celsius Mango Lemonade" },
       cat:   { en: "Celsius", uz: "Celsius", ru: "Celsius" },
       short: { en: "Mango & lemon / 0.25 l / sugar-free", uz: "Mango va limon / 0.25 l / shakarsiz", ru: "Манго и лимон / 0.25 л / без сахара" },
@@ -300,7 +300,7 @@ const PRODUCTS = {
       ]
         },
     {
-      image: "Celsius-Kiwi-Guava.jpg",
+      image: "img/Celsius-Kiwi-Guava.jpg",
       name:  { en: "Celsius Kiwi Guava", uz: "Celsius Kiwi Guava", ru: "Celsius Kiwi Guava" },
       cat:   { en: "Celsius", uz: "Celsius", ru: "Celsius" },
       short: { en: "Kiwi & guava / 0.25 l / sugar-free", uz: "Kivi va guava / 0.25 l / shakarsiz", ru: "Киви и гуава / 0.25 л / без сахара" },
@@ -319,7 +319,7 @@ const PRODUCTS = {
 
     /* ── MONSTER ── */
     {
-      image: "monster-energy.png",
+      image: "img/monster-energy.png",
       name:  { en: "Monster Energy Original", uz: "Monster Energy Original", ru: "Monster Energy Original" },
       cat:   { en: "Monster", uz: "Monster", ru: "Monster" },
       short: { en: "Classic / 0.5 l", uz: "Klassik / 0.5 l", ru: "Классический / 0.5 л" },
@@ -336,7 +336,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "monster-mango-loco-NL-blik.jpg",
+      image: "img/monster-mango-loco-NL-blik.jpg",
       name:  { en: "Monster Energy Mango Loco", uz: "Monster Energy Mango Loco", ru: "Monster Energy Mango Loco" },
       cat:   { en: "Monster", uz: "Monster", ru: "Monster" },
       short: { en: "Mango juice / 0.5 l", uz: "Mango sharbati / 0.5 l", ru: "Манго сок / 0.5 л" },
@@ -353,7 +353,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "monster-juiced-khaotic-3.jpeg",
+      image: "img/monster-juiced-khaotic-3.jpeg",
       name:  { en: "Monster Energy Juiced Khaotic", uz: "Monster Energy Juiced Khaotic", ru: "Monster Energy Juiced Khaotic" },
       cat:   { en: "Monster", uz: "Monster", ru: "Monster" },
       short: { en: "Orange & tropical / 0.5 l", uz: "Apelsin va tropik / 0.5 l", ru: "Апельсин и тропик / 0.5 л" },
@@ -370,7 +370,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "Monster-Monarch-blik.jpg",
+      image: "img/Monster-Monarch-blik.jpg",
       name:  { en: "Monster Energy Juiced Monarch", uz: "Monster Energy Juiced Monarch", ru: "Monster Energy Juiced Monarch" },
       cat:   { en: "Monster", uz: "Monster", ru: "Monster" },
       short: { en: "Passion fruit & orange / 0.5 l", uz: "Marakuya va apelsin / 0.5 l", ru: "Маракуйя и апельсин / 0.5 л" },
@@ -387,7 +387,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "Monster-Bad-Apple-bestellen-bei-Five-Star-Trading-Holland.png",
+      image: "img/Monster-Bad-Apple-bestellen-bei-Five-Star-Trading-Holland.png",
       name:  { en: "Monster Energy Juiced Bad Apple", uz: "Monster Energy Juiced Bad Apple", ru: "Monster Energy Juiced Bad Apple" },
       cat:   { en: "Monster", uz: "Monster", ru: "Monster" },
       short: { en: "Apple juice / 0.5 l", uz: "Olma sharbati / 0.5 l", ru: "Яблочный сок / 0.5 л" },
@@ -404,7 +404,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "Monster-Absolutely-Zero-SA.jpg",
+      image: "img/Monster-Absolutely-Zero-SA.jpg",
       name:  { en: "Monster Energy Absolutely Zero", uz: "Monster Energy Absolutely Zero", ru: "Monster Energy Absolutely Zero" },
       cat:   { en: "Monster", uz: "Monster", ru: "Monster" },
       short: { en: "Sugar-free / 0.5 l", uz: "Shakarsiz / 0.5 l", ru: "Без сахара / 0.5 л" },
@@ -421,7 +421,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "Monster-Lando-Norris-PL-bestellen-bei-Five-Star-Trading-Holland.png",
+      image: "img/Monster-Lando-Norris-PL-bestellen-bei-Five-Star-Trading-Holland.png",
       name:  { en: "Monster Energy Lando Norris", uz: "Monster Energy Lando Norris", ru: "Monster Energy Lando Norris" },
       cat:   { en: "Monster", uz: "Monster", ru: "Monster" },
       short: { en: "Zero sugar / 0.5 l / F1 edition", uz: "Shakarsiz / 0.5 l / F1 nashr", ru: "Без сахара / 0.5 л / F1 издание" },
@@ -438,7 +438,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "monster-aussie-style-lemonade-blik.jpg",
+      image: "img/monster-aussie-style-lemonade-blik.jpg",
       name:  { en: "Monster Energy Aussie Style Lemonade", uz: "Monster Energy Aussie Style Lemonade", ru: "Monster Energy Aussie Style Lemonade" },
       cat:   { en: "Monster", uz: "Monster", ru: "Monster" },
       short: { en: "Lemonade / 0.5 l", uz: "Limonad / 0.5 l", ru: "Лимонад / 0.5 л" },
@@ -455,7 +455,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "java_monster_mean_bean.jpg",
+      image: "img/java_monster_mean_bean.jpg",
       name:  { en: "Java Monster Mean Bean", uz: "Java Monster Mean Bean", ru: "Java Monster Mean Bean" },
       cat:   { en: "Monster Coffee", uz: "Monster Qahva", ru: "Monster Кофе" },
       short: { en: "Coffee + energy / 0.443 l / USA", uz: "Qahva + energiya / 0.443 l / AQSh", ru: "Кофе + энергия / 0.443 л / США" },
@@ -480,7 +480,7 @@ const PRODUCTS = {
 
     /* ── КОНЦЕНТРАТ МОЛОЧНОГО БЕЛКА (MPC) ── */
     {
-      image: "MPC40.jpg",
+      image: "img/MPC40.jpg",
       name:  { en: "Milk Protein Concentrate MPC-40", uz: "Sut oqsili kontsentrati MPC-40", ru: "Концентрат молочного белка MPC-40" },
       cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
       short: { en: "25 kg / 40% protein", uz: "25 kg / 40% oqsil", ru: "25 кг / 40% белка" },
@@ -496,7 +496,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "MPC70.jpg",
+      image: "img/MPC70.jpg",
       name:  { en: "Milk Protein Concentrate MPC-70", uz: "Sut oqsili kontsentrati MPC-70", ru: "Концентрат молочного белка MPC-70" },
       cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
       short: { en: "25 kg / 70% protein", uz: "25 kg / 70% oqsil", ru: "25 кг / 70% белка" },
@@ -512,7 +512,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "MPC80.jpg",
+      image: "img/MPC80.jpg",
       name:  { en: "Milk Protein Concentrate MPC-80", uz: "Sut oqsili kontsentrati MPC-80", ru: "Концентрат молочного белка MPC-80" },
       cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
       short: { en: "25 kg / 80% protein", uz: "25 kg / 80% oqsil", ru: "25 кг / 80% белка" },
@@ -528,7 +528,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "MPC85.jpg",
+      image: "img/MPC85.jpg",
       name:  { en: "Milk Protein Concentrate MPC-85", uz: "Sut oqsili kontsentrati MPC-85", ru: "Концентрат молочного белка MPC-85" },
       cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
       short: { en: "25 kg / 85% protein", uz: "25 kg / 85% oqsil", ru: "25 кг / 85% белка" },
@@ -546,7 +546,7 @@ const PRODUCTS = {
 
     /* ── КОНЦЕНТРАТ СЫВОРОТОЧНОГО БЕЛКА (WPC) ── */
     {
-      image: "WPC35.jpg",
+      image: "img/WPC35.jpg",
       name:  { en: "Whey Protein Concentrate WPC-35", uz: "Zardob oqsili kontsentrati WPC-35", ru: "Концентрат сывороточного белка WPC-35" },
       cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
       short: { en: "25 kg / 35% protein", uz: "25 kg / 35% oqsil", ru: "25 кг / 35% белка" },
@@ -562,7 +562,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "WPC50.jpg",
+      image: "img/WPC50.jpg",
       name:  { en: "Whey Protein Concentrate WPC-50", uz: "Zardob oqsili kontsentrati WPC-50", ru: "Концентрат сывороточного белка WPC-50" },
       cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
       short: { en: "25 kg / 50% protein", uz: "25 kg / 50% oqsil", ru: "25 кг / 50% белка" },
@@ -578,7 +578,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "WPC60.jpg",
+      image: "img/WPC60.jpg",
       name:  { en: "Whey Protein Concentrate WPC-60", uz: "Zardob oqsili kontsentrati WPC-60", ru: "Концентрат сывороточного белка WPC-60" },
       cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
       short: { en: "25 kg / 60% protein", uz: "25 kg / 60% oqsil", ru: "25 кг / 60% белка" },
@@ -594,7 +594,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "WPC70.jpg",
+      image: "img/WPC70.jpg",
       name:  { en: "Whey Protein Concentrate WPC-70", uz: "Zardob oqsili kontsentrati WPC-70", ru: "Концентрат сывороточного белка WPC-70" },
       cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
       short: { en: "25 kg / 70% protein", uz: "25 kg / 70% oqsil", ru: "25 кг / 70% белка" },
@@ -610,7 +610,7 @@ const PRODUCTS = {
       ]
     },
     {
-      image: "WPC80.jpg",
+      image: "img/WPC80.jpg",
       name:  { en: "Whey Protein Concentrate WPC-80", uz: "Zardob oqsili kontsentrati WPC-80", ru: "Концентрат сывороточного белка WPC-80" },
       cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
       short: { en: "25 kg / 80% protein", uz: "25 kg / 80% oqsil", ru: "25 кг / 80% белка" },
