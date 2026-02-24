@@ -6,9 +6,6 @@
   <title>ZAMIX</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ======================================================
-       ЦВЕТА — меняй здесь, изменится везде
-    ====================================================== */
     :root {
       --bg:     #F4F2ED;
       --white:  #FAFAF7;
@@ -260,62 +257,41 @@
       z-index: 900;
       align-items: center;
       justify-content: center;
-      padding: 30px;
+      padding: 20px;
     }
     .modal-overlay.open { display: flex; }
 
-    
     @keyframes modalIn {
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-  .modal {
-    background: var(--white);
-    width: 95vw;
-    max-width: 400px;
-    position: relative;
-    overflow: hidden;
-    animation: modalIn .3s ease;
-    border-radius: 14px;
-    box-sizing: border-box;
+    .modal {
+      background: var(--white);
+      width: 100%;
+      max-width: 580px;
+      position: relative;
+      overflow: hidden;
+      animation: modalIn .3s ease;
+      border-radius: 14px;
+    }
+
+    .modal-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      overflow: hidden;
+      background: #fffeff; /* цвет заливки по бокам */
+      display: flex;
+      align-items: center;
+      justify-content: center;
   }
 
-.modal-img-wrap {
-  width: 100%;
-  height: 40vw;
-  max-height: 220px;
-  min-height: 120px;
-  background: #fffefe;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.modal-img-wrap img {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  background: #fffefe;
-  display: block;
-}
-
-/* Для очень маленьких экранов */
-@media (max-width: 400px) {
-  .modal {
-    max-width: 98vw;
+  .modal-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* чтобы фото полностью помещалось */
+      display: block;
   }
-  .modal-img-wrap {
-    height: 32vw;
-    max-height: 120px;
-    min-height: 70px;
-  }
-}
-  
-  
-
 
     .modal-body { padding: 30px 34px 34px; }
 
@@ -379,7 +355,6 @@
     }
 
     /* ── ABOUT ── */
-    /* Сделать центрирование текста */
     #about {
       background: var(--grey);
       color: var(--fg);
@@ -487,8 +462,17 @@
       #about { padding: 60px 22px; }
       footer { padding: 40px 22px; }
       .nav-item { padding: 18px 16px; font-size: 10px; letter-spacing: 1.5px; }
-      .modal-body { padding: 20px 20px 24px; }
       .about-section h3 { font-size: 20px; }
+
+      /* Модалка на телефоне — компактная, всё влезает */
+      .modal-overlay { padding: 12px; }
+      .modal { border-radius: 10px; }
+      .modal-img-wrap { aspect-ratio: 16 / 6; }
+      .modal-body { padding: 16px 18px 20px; }
+      .modal-name { font-size: 20px; margin-bottom: 8px; }
+      .modal-desc { font-size: 11px; line-height: 1.7; margin-bottom: 16px; }
+      .spec-item { padding: 9px 12px; }
+      .spec-value { font-size: 15px; }
     }
   </style>
 </head>
@@ -633,10 +617,6 @@
   </div>
 </footer>
 
-<!-- ============================================================
-     ДАННЫЕ — в отдельном файле translations.js
-     Все тексты и товары редактируй там!
-============================================================ -->
 <script src="translations.js"></script>
 
 <script>
@@ -746,7 +726,6 @@ function setLang(lang) {
   renderProducts();
 }
 
-/* Запуск */
 setLang('ru');
 </script>
 </body>
