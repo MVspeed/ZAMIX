@@ -254,14 +254,13 @@ const PRODUCTS = {
       cat:   { en: "Celsius", uz: "Celsius", ru: "Celsius" },
       short: { en: "Frozen berry / 0.25 l / sugar-free", uz: "Muzlatilgan rezavor / 0.25 l / shakarsiz", ru: "Замороженные ягоды / 0.25 л / без сахара" },
       desc:  {
-        en: "Cold, clean and instantly refreshing — Arctic Vibe delivers a steady energy lift from green tea extract, guarana and ginger, with zero sugar and no crash. Cool berry taste, strong performance, modern format.",
-        uz: "Sovuq, toza va darhol yangilovchi — Arctic Vibe yashil choy ekstrakti, guarana va zanjabildan barqaror energiya ko'tarilishini ta'minlaydi, shakarsiz va tushishsiz. Salqin rezavor ta'mi, kuchli ishlash, zamonaviy format.",
-        ru: "Холодный, чистый и мгновенно освежающий — Arctic Vibe даёт стабильный подъём энергии из экстракта зелёного чая, гуараны и имбиря, без сахара и без спада. Свежий ягодный вкус, высокая производительность, современный формат."
+        en: "Ice-cold frozen berry — sharp, clean and instantly refreshing. Arctic Vibe hits different from the first sip: tart wild berries cut through with a cool spark that wakes you up before the caffeine even kicks in. Its thermogenic MetaPlus formula — green tea extract (EGCG), guarana and ginger — is clinically proven to accelerate metabolism and raise resting energy expenditure by up to 14% for 3 hours after drinking. 6 independent university studies back this up. Add taurine, glucuronolactone, a full B-vitamin complex (B2, B3, B5, B6, B7, B12) and vitamin C. Zero sugar, only 3 kcal. Not just an energy drink — a functional fitness drink that works for your body.",
+        uz: "Muzlatilgan rezavor — o'tkir, toza va darhol yangilovchi. Arctic Vibe birinchi qultumdan farq qiladi: o'tkir yovvoyi rezavorlar kofeyin ishga tushgunga qadar sizni uyg'otadigan salqin uchqun bilan kesib o'tadi. Uning termogen MetaPlus formulasi — yashil choy ekstrakti (EGCG), guarana va zanjabil — metabolizmni tezlashtirishi va ichishdan keyin 3 soat davomida tinch holatdagi energiya sarfini 14% gacha oshirishi klinik jihatdan isbotlangan. 6 ta mustaqil universitet tadqiqoti buni tasdiqlaydi. Taurin, glyukuronolakton, to'liq B-vitamin kompleksi (B2, B3, B5, B6, B7, B12) va C vitamini. Shakar yo'q, atigi 3 kkal. Bu shunchaki energetik emas — tanangiz uchun ishlaydigan funksional fitness ichimligi.",
+        ru: "Ледяные замороженные ягоды — острые, чистые и мгновенно бодрящие. Arctic Vibe ощущается иначе с первого глотка: терпкие лесные ягоды пронизывают свежей искрой, которая будит тебя ещё до того, как кофеин начинает действовать. Термогенная формула MetaPlus — экстракт зелёного чая (EGCG), гуарана и имбирь — клинически доказано ускоряет метаболизм и повышает расход энергии в покое до 14% в течение 3 часов. 6 независимых университетских исследований это подтверждают. Плюс таурин, глюкуронолактон, полный комплекс витаминов B (B2, B3, B5, B6, B7, B12) и витамин C. Ноль сахара, всего 3 ккал. Не просто энергетик — функциональный фитнес-напиток, который работает на ваше тело."
       },
       specs: [
         { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
         { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "3 kcal" },
-        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "75 mg"  },
         { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
       ]
     },
@@ -271,14 +270,13 @@ const PRODUCTS = {
       cat:   { en: "Celsius", uz: "Celsius", ru: "Celsius" },
       short: { en: "White peach / 0.25 l / sugar-free", uz: "Oq shaftoli / 0.25 l / shakarsiz", ru: "Белый персик / 0.25 л / без сахара" },
       desc:  {
-        en: "Soft, sweet white peach with a gentle energy boost from green tea and guarana. The choice for those who want smooth alertness and refined taste — without the jitters or the sugar.",
-        uz: "Yashil choy va guaranadan yumshoq energiya oshishi bilan nozik, shirin oq shaftoli. Titrashsiz va shakarsiz yumshoq tetiklik va nafis ta'm istaydiganlar uchun tanlov.",
-        ru: "Нежный сладкий белый персик с мягким энергетическим подъёмом от зелёного чая и гуараны. Выбор для тех, кто хочет плавную бодрость и утончённый вкус — без дрожи и без сахара."
+          en: "Sun-ripened white peach — soft, sweet and surprisingly elegant for an energy drink. Peach Vibe is the one you reach for when you want smooth focus without the edge. A gentler entry into the Celsius world, but every bit as effective underneath. Its thermogenic MetaPlus formula — green tea extract (EGCG), guarana and ginger — is clinically proven to accelerate metabolism and raise resting energy expenditure by up to 14% for 3 hours after drinking. 6 independent university studies back this up. Add taurine, glucuronolactone, a full B-vitamin complex (B2, B3, B5, B6, B7, B12) and vitamin C. Zero sugar, only 3 kcal. Not just an energy drink — a functional fitness drink that works for your body.",
+        uz: "Quyoshda pishgan oq shaftoli — yumshoq, shirin va energetik ichimlik uchun kutilmaganda nafis. Peach Vibe — o'tkirliksiz yumshoq diqqatni xohlaganingizda tanlaydiganingiz. Celsius dunyosiga yumshoqroq kirish, lekin ostida bir xil samarali. Uning termogen MetaPlus formulasi — yashil choy ekstrakti (EGCG), guarana va zanjabil — metabolizmni tezlashtirishi va ichishdan keyin 3 soat davomida tinch holatdagi energiya sarfini 14% gacha oshirishi klinik jihatdan isbotlangan. 6 ta mustaqil universitet tadqiqoti buni tasdiqlaydi. Taurin, glyukuronolakton, to'liq B-vitamin kompleksi (B2, B3, B5, B6, B7, B12) va C vitamini. Shakar yo'q, atigi 3 kkal. Bu shunchaki energetik emas — tanangiz uchun ishlaydigan funksional fitness ichimligi.",
+        ru: "Белый персик, налитый солнцем — мягкий, сладкий и неожиданно изысканный для энергетика. Peach Vibe — это тот, к которому тянешься, когда нужна плавная концентрация без резкости. Самый нежный вход в мир Celsius, но не менее эффективный. Термогенная формула MetaPlus — экстракт зелёного чая (EGCG), гуарана и имбирь — клинически доказано ускоряет метаболизм и повышает расход энергии в покое до 14% в течение 3 часов. 6 независимых университетских исследований это подтверждают. Плюс таурин, глюкуронолактон, полный комплекс витаминов B (B2, B3, B5, B6, B7, B12) и витамин C. Ноль сахара, всего 3 ккал. Не просто энергетик — функциональный фитнес-напиток, который работает на ваше тело."
       },
       specs: [
         { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
         { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "3 kcal" },
-        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "75 mg"  },
         { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
       ]
     },
@@ -288,31 +286,29 @@ const PRODUCTS = {
       cat:   { en: "Celsius", uz: "Celsius", ru: "Celsius" },
       short: { en: "Mango & lemon / 0.25 l / sugar-free", uz: "Mango va limon / 0.25 l / shakarsiz", ru: "Манго и лимон / 0.25 л / без сахара" },
       desc:  {
-        en: "Tropical mango meets zesty lemonade in Celsius's most vibrant flavour. Energised by green tea and guarana, it delivers clean, focused energy — perfect before a workout or a long workday.",
-        uz: "Tropik mango Celsius'ning eng yorqin ta'mida limonad bilan uchrashadi. Yashil choy va guarana bilan kuchaytirilib, u mashq yoki uzoq ish kunidan oldin mukammal toza, e'tiborli energiyani ta'minlaydi.",
-        ru: "Тропическое манго встречается с пикантным лимонадом в самом ярком вкусе Celsius. Заряженный зелёным чаем и гуараной, он даёт чистую, сфокусированную энергию — идеально перед тренировкой или долгим рабочим днём."
-      },
+        en: "Juicy tropical mango crashes into bright zingy lemonade — bold, vibrant and impossible to ignore. Mango Lemonade is Celsius turned up: more fruit, more sparkle, more personality. The one you grab before a workout when you need that extra push. Its thermogenic MetaPlus formula — green tea extract (EGCG), guarana and ginger — is clinically proven to accelerate metabolism and raise resting energy expenditure by up to 14% for 3 hours after drinking. 6 independent university studies back this up. Add taurine, glucuronolactone, a full B-vitamin complex (B2, B3, B5, B6, B7, B12) and vitamin C. Zero sugar, only 3 kcal. Not just an energy drink — a functional fitness drink that works for your body.",
+        uz: "Sharbatli tropik mango yorqin, shiddatli limonadga uriladi — jasur, yorqin va e'tiborsiz qoldirib bo'lmaydigan. Mango Lemonade — bu kuchaytirilgan Celsius: ko'proq meva, ko'proq ko'pik, ko'proq shaxsiyat. Qo'shimcha itarishni xohlaganingizda mashqdan oldin oladigan narsa. Uning termogen MetaPlus formulasi — yashil choy ekstrakti (EGCG), guarana va zanjabil — metabolizmni tezlashtirishi va ichishdan keyin 3 soat davomida tinch holatdagi energiya sarfini 14% gacha oshirishi klinik jihatdan isbotlangan. 6 ta mustaqil universitet tadqiqoti buni tasdiqlaydi. Taurin, glyukuronolakton, to'liq B-vitamin kompleksi (B2, B3, B5, B6, B7, B12) va C vitamini. Shakar yo'q, atigi 3 kkal. Bu shunchaki energetik emas — tanangiz uchun ishlaydigan funksional fitness ichimligi.",
+        ru: "Сочное тропическое манго врывается в яркий пикантный лимонад — смелый, живой и невозможно не заметить. Mango Lemonade — это Celsius на максимуме: больше фруктов, больше игристости, больше характера. Тот, который берёшь перед тренировкой, когда нужен дополнительный толчок. Термогенная формула MetaPlus — экстракт зелёного чая (EGCG), гуарана и имбирь — клинически доказано ускоряет метаболизм и повышает расход энергии в покое до 14% в течение 3 часов. 6 независимых университетских исследований это подтверждают. Плюс таурин, глюкуронолактон, полный комплекс витаминов B (B2, B3, B5, B6, B7, B12) и витамин C. Ноль сахара, всего 3 ккал. Не просто энергетик — функциональный фитнес-напиток, который работает на ваше тело."
+     },
       specs: [
-        { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
+      { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
         { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "3 kcal" },
-        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "75 mg"  },
-        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }      
       ]
-    },
+        },
     {
       image: "Celsius-Kiwi-Guava.jpg",
       name:  { en: "Celsius Kiwi Guava", uz: "Celsius Kiwi Guava", ru: "Celsius Kiwi Guava" },
       cat:   { en: "Celsius", uz: "Celsius", ru: "Celsius" },
       short: { en: "Kiwi & guava / 0.25 l / sugar-free", uz: "Kivi va guava / 0.25 l / shakarsiz", ru: "Киви и гуава / 0.25 л / без сахара" },
       desc:  {
-        en: "A bold tropical duo — tart kiwi and sweet guava — backed by Celsius's clean energy formula: green tea, guarana, ginger, and a full B-vitamin complex. Zero sugar, zero compromise.",
-        uz: "Jasur tropik duo — o'tkir kivi va shirin guava — Celsius'ning toza energiya formulasi bilan: yashil choy, guarana, zanjabil va to'liq B-vitamin kompleksi. Shakarsiz, murosasiz.",
-        ru: "Смелый тропический дуэт — кислый киви и сладкая гуава — поддержанный чистой энергетической формулой Celsius: зелёный чай, гуарана, имбирь и полный комплекс витаминов B. Без сахара, без компромиссов."
+        en: "Tart kiwi meets velvet-smooth guava in the most tropical Celsius yet. The contrast is the point — sour and sweet, sharp and soft — all in one impossibly refreshing can. The flavour that makes you forget you're drinking something that's actually good for you. Its thermogenic MetaPlus formula — green tea extract (EGCG), guarana and ginger — is clinically proven to accelerate metabolism and raise resting energy expenditure by up to 14% for 3 hours after drinking. 6 independent university studies back this up. Add taurine, glucuronolactone, a full B-vitamin complex (B2, B3, B5, B6, B7, B12) and vitamin C. Zero sugar, only 3 kcal. Not just an energy drink — a functional fitness drink that works for your body.",
+        uz: "O'tkir kivi eng tropik Celsius da mayin guava bilan uchrashadir. Qarama-qarshilik maqsad — nordon va shirin, o'tkir va yumshoq — barchasi bir inanilmas yangilovchi qutida. Siz uchun chindan ham foydali narsa ichayotganingizni unuttiradigan ta'm. Uning termogen MetaPlus formulasi — yashil choy ekstrakti (EGCG), guarana va zanjabil — metabolizmni tezlashtirishi va ichishdan keyin 3 soat davomida tinch holatdagi energiya sarfini 14% gacha oshirishi klinik jihatdan isbotlangan. 6 ta mustaqil universitet tadqiqoti buni tasdiqlaydi. Taurin, glyukuronolakton, to'liq B-vitamin kompleksi (B2, B3, B5, B6, B7, B12) va C vitamini. Shakar yo'q, atigi 3 kkal. Bu shunchaki energetik emas — tanangiz uchun ishlaydigan funksional fitness ichimligi.",
+        ru: "Кислый киви встречается с бархатистой гуавой в самом тропическом Celsius на сегодняшний день. Контраст — это и есть суть: кислое и сладкое, острое и мягкое — всё в одной невероятно освежающей банке. Тот вкус, от которого забываешь, что пьёшь что-то по-настоящему полезное. Термогенная формула MetaPlus — экстракт зелёного чая (EGCG), гуарана и имбирь — клинически доказано ускоряет метаболизм и повышает расход энергии в покое до 14% в течение 3 часов. 6 независимых университетских исследований это подтверждают. Плюс таурин, глюкуронолактон, полный комплекс витаминов B (B2, B3, B5, B6, B7, B12) и витамин C. Ноль сахара, всего 3 ккал. Не просто энергетик — функциональный фитнес-напиток, который работает на ваше тело."
       },
       specs: [
         { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
         { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "3 kcal" },
-        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "75 mg"  },
         { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
       ]
     },
