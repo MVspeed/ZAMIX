@@ -261,7 +261,8 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
         { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "3 kcal" },
-        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    },
+        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "75 mg"  }
       ]
     },
     {
@@ -277,7 +278,8 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
         { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "3 kcal" },
-        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    },
+        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "75 mg"  }
       ]
     },
     {
@@ -293,7 +295,8 @@ const PRODUCTS = {
       specs: [
       { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
         { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "3 kcal" },
-        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }      
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    },
+        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "75 mg"  }      
       ]
         },
     {
@@ -309,7 +312,8 @@ const PRODUCTS = {
       specs: [
         { label: { en: "Volume",   uz: "Hajm",     ru: "Объём"   }, value: "250 ml" },
         { label: { en: "Calories", uz: "Kaloriya", ru: "Калории" }, value: "3 kcal" },
-        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    }
+        { label: { en: "Sugar",    uz: "Shakar",   ru: "Сахар"   }, value: "0 g"    },
+        { label: { en: "Caffeine", uz: "Kafein",   ru: "Кофеин"  }, value: "75 mg"  }
       ]
     },
 
