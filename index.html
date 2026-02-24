@@ -294,12 +294,18 @@
     background: #fffefe;
     display: block;
   }
+  
   @media (max-width: 600px) {
+  .modal {
+    max-width: 300px; /* 300px * 0.7, если хотите ещё меньше */
+    width: 90%;
+  }
   .modal-img-wrap {
-    height: 60vw;
-    max-height: 60px;
+    height: 120px; /* 110px * 0.7 */
+    max-height: 77px;
   }
 }
+
 
     .modal-body { padding: 30px 34px 34px; }
 
@@ -363,6 +369,7 @@
     }
 
     /* ── ABOUT ── */
+    /* Сделать центрирование текста */
     #about {
       background: var(--grey);
       color: var(--fg);
