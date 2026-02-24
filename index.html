@@ -158,9 +158,10 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 40px;
       max-width: 1000px;
+      min-width: 480px;
       margin: 0 auto;
     }
 
@@ -466,7 +467,12 @@
       header { padding: 14px 22px; }
       #hero  { padding: 60px 22px 48px; }
       #catalog { padding: 40px 22px 70px; }
-      .products-grid { grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 10px; }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        min-width: 310px;
+        max-width: 340px;
+      }
       #about { padding: 60px 22px; }
       footer { padding: 40px 22px; }
       .nav-item { padding: 18px 16px; font-size: 10px; letter-spacing: 1.5px; }
