@@ -485,9 +485,9 @@ const PRODUCTS = {
       cat:   { en: "Milk Protein Concentrate", uz: "Sut oqsili kontsentrati", ru: "Концентрат молочного белка" },
       short: { en: "25 kg / 40% protein", uz: "25 kg / 40% oqsil", ru: "25 кг / 40% белка" },
       desc:  {
-        en: "MPC-40 is an entry-level milk protein concentrate with a balanced ratio of protein and lactose. Ideal for cheese production, fermented dairy products and food applications where both protein and carbohydrate content matter. Sourced from Poland, certified BRC, IFS, Halal and Kosher.",
-        uz: "MPC-40 — oqsil va laktoza muvozanatli nisbati bilan boshlang'ich darajadagi sut oqsili kontsentrati. Pishloq ishlab chiqarish, achitilgan sut mahsulotlari va oqsil hamda uglevodlar tarkibi muhim bo'lgan oziq-ovqat mahsulotlari uchun ideal. Polshadan yetkaziladi, BRC, IFS, Halal va Kosher sertifikatlangan.",
-        ru: "MPC-40 — концентрат молочного белка начального уровня со сбалансированным соотношением белка и лактозы. Идеален для производства сыров, кисломолочных продуктов и пищевых применений, где важно содержание как белка, так и углеводов."
+        en: "MPC-40 is an entry-level milk protein concentrate with a balanced ratio of protein and lactose. Ideal for cheese production, fermented dairy products and food applications where both protein and carbohydrate content matter. Sourced from EU (European Union), certified BRC, IFS, Halal and Kosher.",
+        uz: "MPC-40 — oqsil va laktoza muvozanatli nisbati bilan boshlang'ich darajadagi sut oqsili kontsentrati. Pishloq ishlab chiqarish, achitilgan sut mahsulotlari va oqsil hamda uglevodlar tarkibi muhim bo'lgan oziq-ovqat mahsulotlari uchun ideal. Yevropa Ittifoqidan yetkaziladi, BRC, IFS, Halal va Kosher sertifikatlangan.",
+        ru: "MPC-40 — концентрат молочного белка начального уровня со сбалансированным соотношением белка и лактозы. Идеален для производства сыров, кисломолочных продуктов и пищевых применений, где важно содержание как белка, так и углеводов. Поставляется из Европейского союза."
       },
       specs: [
         { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~40%"   },
@@ -615,15 +615,15 @@ const PRODUCTS = {
       cat:   { en: "Whey Protein Concentrate", uz: "Zardob oqsili kontsentrati", ru: "Концентрат сывороточного белка" },
       short: { en: "25 kg / 80% protein", uz: "25 kg / 80% oqsil", ru: "25 кг / 80% белка" },
       desc:  {
-        en: "WPC-80 is the industry benchmark for sports and therapeutic nutrition. Fast-absorbing, rich in essential amino acids and BCAAs — it is the go-to choice for protein shakes, sports bars and recovery products. Certified BRC, IFS, Halal and Kosher. Produced in Poland.",
-        uz: "WPC-80 — sport va terapevtik ovqatlanish uchun sanoat standarti. Tez so'riluvchi, muhim aminokislotlar va BCAA bilan boy — u protein kokteyllari, sport batonlari va tiklanish mahsulotlari uchun asosiy tanlov. BRC, IFS, Halal va Kosher sertifikatlangan. Polshada ishlab chiqarilgan.",
-        ru: "WPC-80 — отраслевой стандарт для спортивного и лечебного питания. Быстро усваивается, богат незаменимыми аминокислотами и BCAA — основной выбор для протеиновых коктейлей, спортивных батончиков и продуктов восстановления. Сертификаты BRC, IFS, Халяль, Кошер. Производство Польша."
+        en: "WPC-80 is the industry benchmark for sports and therapeutic nutrition. Fast-absorbing, rich in essential amino acids and BCAAs — it is the go-to choice for protein shakes, sports bars and recovery products. Certified BRC, IFS, Halal and Kosher. Produced in EU (European Union).",
+        uz: "WPC-80 — sport va terapevtik ovqatlanish uchun sanoat standarti. Tez so'riluvchi, muhim aminokislotlar va BCAA bilan boy — u protein kokteyllari, sport batonlari va tiklanish mahsulotlari uchun asosiy tanlov. BRC, IFS, Halal va Kosher sertifikatlangan. Yevropa Ittifoqida ishlab chiqarilgan.",
+        ru: "WPC-80 — отраслевой стандарт для спортивного и лечебного питания. Быстро усваивается, богат незаменимыми аминокислотами и BCAA — основной выбор для протеиновых коктейлей, спортивных батончиков и продуктов восстановления. Сертификаты BRC, IFS, Халяль, Кошер. Производство — Европейский союз."
       },
       specs: [
-        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~80%"    },
-        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg"   },
+        { label: { en: "Protein",   uz: "Oqsil",      ru: "Белок"    }, value: "~80%" },
+        { label: { en: "Packaging", uz: "Qadoqlash",  ru: "Фасовка"  }, value: "25 kg" },
         { label: { en: "Grade",     uz: "Daraja",     ru: "Класс"    }, value: "Sport / Medical" }
       ]
     }
-  ]
+]
 };
